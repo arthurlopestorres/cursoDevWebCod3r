@@ -1,0 +1,9 @@
+HTML, CSS e JS
+
+Html vai ser responsável por toda a parte estrutural da página. Entender o que cada tag que dizer e é feita para fazer é necessário.
+
+Css vai definir estilos dos elementos html na página.
+
+Html = estrutura
+Css = estilo
+Js = comportamento

@@ -1,0 +1,21 @@
+Vamos falar nessa aula sobre o protocolo HTTPS (HTTPSeguro)
+Neste protocolo, em contraste com o HTTP, a comunicação fica criptografada.
+
+A segurnaça é feita em cima de um protocolo que criptografa os dados a partir de um certificado, vamos ver algumas opções de protocolos de criptografia:
+
+1- Http + TLS (transport layer security protocol) -- SSL v4 - TLS é uma versão evoluida do SSL.
+2- Http + SSL (Secure Sockets Layer Protocol)
+
+certificado != protocolo
+'Certificado SSL ou TLS' -> isso não é um certificado necessariamente. Na verdade, este é um certificado que utiliza os protocolos SSL ou TLS.
+
+
+Alguns motivos de utilizarmos HTTPS:
+1- Dados são criptografados sando os protocolos TLS ou SSL
+2- Protege contra interceptaçao (MITM - man in the middle)
+3- Criptografa todas as informações: URL, cookies e headers
+4- Usa certificados digitais
+
+Autoridades certificadoras:
+São organizações que emitem e validam os certificados (analisam se é de fato segura a conexão).
+Elas geram o arquivo de remove criptografia quando o dados é recebido no servidor ou no cliente (vice-versa)

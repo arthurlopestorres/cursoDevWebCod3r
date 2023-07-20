@@ -1,0 +1,7 @@
+Conteudo Estático vs Dinamico
+
+Do ponto de vista 'server-side', o conteudo é estático quando o servidor lê os arquivos estáticos salvos no disco e os serve para a página que está fazendo a requisição.
+Conteúdo dinâmico é aquele que é gerado a partir de um código, de forma que, a aparencia final é gerada de acordo com os parametros no código de um arquivo.
+https://prnt.sc/KCV3An6ObVV7
+
+uma mesma aplicação pode ser estática do lado do server ou dinâmica, se observada do pono de vista do client, por o conteudo ser gerado a partir do JS, e nao de um documento prédeterminado, por exemplo.

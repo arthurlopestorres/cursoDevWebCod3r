@@ -1,0 +1,39 @@
+Web Services
+
+Fizemos um web service simples no capitulo de node, utilizando Express.
+
+O que é web service? 
+Resposta: é um serviço (obviamente).
+O web service vai proporcionar uma comunicação fluida entre diferentes linguagens de programação a partir de um formato texto (leia-se, JSON, XML, arquivos de texto, etc.).
+
+----------------------------------------------------------------------
+Há dua grandes alternativas para trabalhar com web services:
+
+SOAP (Simples Object Access Protocol) -> 
+* WSDL (Conceito utilizado para SOAP que é Web Service Descriptional Language); 
+* XML é o formato padrão; 
+* RPC (Remote Procedure Call, que me permite invocar uma função remotamente). 
+* (Mais burocáritco de trabalhar, mais antigo)
+
+REST (Representational State Transfer) -> JSON, HTTP (mais simples de trabalhar, mais novo)
+* Se eu sigo a convenção estabelecida pelo REST, então meu serviço é chamado 'Restful': https://prnt.sc/JLl7OfdGyi14
+Obs.: CRUD -> Create (Post), Read (Get), Update (Put), Delete (Delete)
+* Comunicação baseada via JSON, na notação (normalmente), mas outros formatos podem ser adotados;
+* Protocolo utilizado é o HTTP, fazendo uso de seus métodos para troca de informações (get, post, put, delete, trace, etc.)
+
+Dentro do curso, vamos abordar apenas a implementação de web services no padrão REST.
+
+------------------------------------------------------------------------
+Há duas escolhas arquiteturais quando falamos de web services:
+1- SOA
+2- Micro Service
+
+SOA:
+* mais antiga 10 a 15 anos já existencia
+* muitos serviços instalados dentro de um barramento (ESB)
+
+Micro Service:
+* pegar uma aplicacao maior e dividir em modulos menores (é comum haverem equipes focadas em um unico serviço dentro da aplicação.)
+
+------------------------------------------------------------------------
+Em suma, web services são serviços disponibilizados pela aplicação utilizando um formato SOAP de comunicação de dados ou formato REST (mais atual e recomendado).

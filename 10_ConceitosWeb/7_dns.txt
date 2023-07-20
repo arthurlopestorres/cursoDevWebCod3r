@@ -1,0 +1,29 @@
+DNS
+
+O DNS traduz os nomes de dominio em endereço IP
+1- Para criar um dominio, preciso acessar registro.br (cerca de 30 reais por ano)
+2- No registro BR há um DNS gratuito que pode ser utilizado
+
+DNS funciona utilizando o protocolo UDP (User Datagram Protocol), que faz contraste com o TCP (Transmission Control Protocol).
+O UDP utiliza a porta 53 por padrão. Ele é menos confiável do que o TCP, mas ele é muito mais rápido.
+
+Slide 41 mostra o funcionamento báicodo DNS:
+https://prnt.sc/mqWJJidKO1PH
+
+Existem duas formas de busca que um servidor DNS pode fazer:
+
+1- Recursiva
+Ao acessarmos a URL, o server1 DNS repassa a solicitação para outros servidores de forma recursiva, questionando se eles conhecem ou não aquela URL.
+Qunado um deles conhece, ele retorna então o endereço de IP referente àquele domínio e o server 1 repassa esse endereço para o client.
+
+2- Busca iterativa
+https://prnt.sc/mLkNqO-iQ91I
+A partir do endereço fornecido, o DNS devolve a referencia para um outro servidor que atenda aquele tipo de endereço informado, e então o DNS correto retorna o IP correto que está atrelado ao dominio informado.
+
+DNS Records:
+A - aponta para IPv4 (classificação tipo A, B e C vista anteriormente)
+AAAA - aponta para IPv6
+MX - aponta para servidor de Email
+NS - aponta para Servidor DNS
+CNAME - aponta para Canonical Name (apelido - permitindo que o mesmo ip seja acessado por diferentes URLs)
+TXT - parâmetros personalizados

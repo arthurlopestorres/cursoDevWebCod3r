@@ -1,0 +1,67 @@
+https://prnt.sc/WSw2e0mcH192
+HTTP é um protocolo de transferencia de dados: Hyper Text Transfer Protocol (protocolo de transferencia de hiper texto)
+A ideia com o 'hyper text' é justamente ter textos linkados entre si 
+
+Hyper Text são o conteúdo de documentos escritos em HTML (Hyper Text Markup Lenguage), onde estão presentes as informações.
+
+////////////////////////////////////////////////////////////////
+Características do HTTP:
+* Ele está na camada de aplicação do TCP/IP
+* HTTP é Stateless: ele não guarda memórias a respeito de requisições (não se sabe se é a primeira requisição, se é centésima e assim por diante) -- ele não possui status - é possível fazer esse controle, mas não utilizando a requisição em si.
+* É um protocolo client-server: ele é muito baseado em requisição e reposta (cliente envia requisição, servidor responde utilizando protocolo HTTP)
+* HTTP pode enviar respostas de diversas formas diferentes HTML, CSS, JS, Mídias, JSON, etc.
+
+////////////////////////////////////////////////////////////
+FLUXO DE UMA COMUNICAÇÃO UTILIZANDO HTTP
+
+1- usuário informa a url, exemplo: www.google.com.br 
+2- Browser gera a requisição (por padrão é um GET), utilizando protocolo HTTP na versão 1.1 para o host www.google.com.br
+3- Servidor gera a resposta com o protocolo, status, tipo de conteudo que esta retornado, formato do conteudo, data, status da conexão, tamanho do conteudo, etc.
+exemplo: https://prnt.sc/IiPa-QjhYeEr
+4- Browser interpreta e exibe conteudo na tela.
+
+///////////////////////////////////////////////////////////
+HTTP tem vários métodos:
+1- GET: para obter dados
+2- POST: para enviar dados (salvando-os num local novo da memoria)
+3- PUT: para enviar dados (atualizando dados já existentes no host)
+4- DELETE: para remover dados salvos
+5- TRACE
+6- OPTIONS
+7- CONNECT
+8- HEAD
+
+///////////////////////////////////////////////////////////
+REQUISIÇÃO E RESPOSTA  
+O fluxo mencionado no print abaixo acontece pode acontecer varias vezes:
+https://prnt.sc/ZJlmELIWqsFN
+Nesse sentido, quanto menor a quantidade de requisições feitas, melhor!
+Quanto menor o tamanho do arquivo, melhor!
+
+////////////////////////////////////////////////////////
+Requisição do tipo GET:
+Exemplo de requisição sendo feita via navegador:
+dominio.com.br/caminho-dentro-do-host?parametros
+google.com.br/search?q=web+moderno&hl=pt-BR
+
+O ponto de interrogação divite o dominio e caminho dos parametros da requisição
+O parâmetro 'q' é 'query', que está recebendo como valor 'web+moderno'
+O parâmetro 'hl' é 'host language', que está recebendo como valor a sigla que indica a lingua, nesse caso, 'pt-BR'
+
+Normalmente, o body da requisção get vai vazio
+////////////////////////////////////////////////////////
+Requisição do tipo POST:
+https://prnt.sc/-V0bNWo3T2c8
+
+Normalmente, os parametros são passados diretamente no corpo (body) da requisição, mas isso não significa que a requisição esteja segura. Para que ela esteja segura é preciso estar utilizando o protocolo HTTPS, que aplica criptografia ao corpo da requisição.
+
+Enviar dados via URL é sempre um erro enorme e não deve ser feito.
+
+////////////////////////////////////////////////////////
+GRUPOS DE STATUS HTTP
+
+1xx - informação
+2xx - sucesso (exempo: 200)
+3xx - redirecionamento (exemplo: redirect 301)
+4xx - erro no cliente (como requisição com parametros invalidos, inexistentes, ou para um host inexistente ou serviço inexistente)
+5xx - erro no servidor (erros no lado do servidor, como o erro 502 que acontece em jogos por vezes)

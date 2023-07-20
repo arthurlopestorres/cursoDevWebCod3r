@@ -1,0 +1,19 @@
+Diferença entre aplicação Server Side e aplicação Client Side
+
+O primeiro tipo de aplicação, foi a aplicação em main frame: https://prnt.sc/EiPSsL3Rh6Zd
+Toda a aplicação e arquivos eram gerados em um local e os demais consumiam dele
+
+A segunda era foi a era do client-server: https://prnt.sc/uRXG0Qc-VNht
+as regras de negocio ficam direto no client (muitas coisas são processadas client side), assim o servidor ficaria como um processador de dados apenas, muitas vezes
+Uma atualização de sistema precisaria ser feita em muitas maquinas diferentes para que o sistema funcione corretamente.
+
+web: server-side
+Na era da web, o primeiro tipo de estrutura foi a server side (servidor possui todos os dados, envia a um distribuidor, que envia as informações aos clients), os clients recebem o documento enviado pelo servidor e exibem o conteudo na tela.
+print: https://prnt.sc/oZ28FjPKl0Q1
+
+
+O mais atual são as aplicações client-side:
+https://prnt.sc/qt9aKZHcmjdn
+
+App server-side: html é gerado a partir do servidor
+App client-side (front-end): há muito SPA (Single Page Application), aqui, a primeira página é renderizada e todo o restante é gerado dinamicamente a partir do JavaScript que foi obtido pelo browser do usuário (client processa o arquivo JS, que está gerando as páginas).

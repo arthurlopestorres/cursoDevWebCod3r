@@ -1,0 +1,20 @@
+existem várias possibilidades no mercado para servidor web.
+Apache, TomCat, MicrosoftIIS, JBoss, NGINX, NodeJS (possui mecanismos para transforma-lo em servidor web)
+TomCat e JBoss são de Java
+NodeJS é de JavaScript JavaScript
+NGINX e Apache podem rodar uma série de tecnologias diferentes
+Há muitos outros servidores no mercado
+
+Quando o cliente acessa uma url, essa url está hospedada em um sevidor DNS, que se comunica com um servidor web para obter os dados.
+Print: https://prnt.sc/2vHYjX_hX7AS
+O DNS pode levar certo tempo para estar acessível em todo o mundo.
+
+1 servidor web pode atender a vários endereços, assim como, 1 endereço pode ser atendido por vários servidores web (utilizando balanceador para suportar as requisições)
+Print: https://prnt.sc/TeLetcd22rbx
+
+Dentro de servidores é muito comum termos uma estrutura de pastas de arquivos estáticos.
+Print: https://prnt.sc/zZKPsUV6oWNw
+Os servidores CDN (content delivery network) são mais rápidos e mais eficazes na entrega de informações estáticas (como arquivos js, css, html, etc.)
+
+Web Stack
+A Stack mais famosa é a Linux, Apaxe, MySQL e PHP (LAMP), que é o sistema completo responsável por armazenar, processar e entregar o conteúdo para o usuário: https://prnt.sc/A5SDdFpuorEB

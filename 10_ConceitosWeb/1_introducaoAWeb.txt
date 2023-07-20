@@ -1,0 +1,54 @@
+Vamos verificar neste capitulo conceitos importantes da WEB.
+Algumas coisas neste capitulo se relacionam tambem com a parte de infraestrutura
+
+BREVE HISTÓRIA:
+Década de 50 surgiu o computador eletronico
+Década de 60 surpgiua a ARPANET - Depatamento de Defesa Americano
+Década de 70 TCP/IP - Robert E. Kahn e Vint Cerf definiram protocolo de comunicação (TCP/IP e o protocolo de comunicação)
+Década de 80 - Tim Berners-Lee criou o www, que está baseado no TCP/IP
+Década de 90 - internet no Brasil
+2000 - IG, Redes Sociais, Internet em casa
+
+Existem topologias de redes diferentes
+Uma das mais famosas é a topologia `Centralizada`: varios computadores ligados ao computador central: https://prnt.sc/wApa-DhX2q9e
+A internet tem uma topologia muito mais parecido com a topologia `Distribuida`: https://prnt.sc/MVchVQIA4GLT
+
+Web - do ingles para portugues é Teia. 
+Há redes de varios niveis diferentes (nivel 1, 2, 3, etc.)
+https://prnt.sc/AxuIkJ4fzSmp
+
+/////////////////////////////////////////////////////////
+A base da internet é o protocolo TCP/IP:
+Transmission Control Protocol (orientada a conexão e confiável)/ Internet Protocol (roteamento entre redes)
+No TCP temos muito do chamado 'handshake' (que é uma conversa preliminar entre os envolvidos para estabelecer conexão segura)
+
+TCP é mais apropriado para troca de mensagens e serviços que nao dependem de atualizacao de dados em tempo real
+Já UDP é mais recomendado para streaming no geral, porque é mais tolerante com perdas de pacote e mais ágil tambem. Serivços de DNS costumam também utilizar UDP
+
+O TCP/IP é, antes de um protocolo, uma aplicação desenvolvida em Layers, de forma que, Layers superiores utilizam de Layers inferiores para funcionarem: https://prnt.sc/QmCf0wWfaRgu
+
+Responsabilidade da camada de internet:
+https://prnt.sc/E_VaXs96R8IZ
+
+Reponsabilidade da camada de transporte:
+https://prnt.sc/0FGvSJF5J_B2
+*TCP comunicação mais lenta e com mais handshakes
+*UDP comunicação mais rapida, normalmente usada por streaming e por serviços DNS
+
+Reponsabilidade da camada de aplicação (esta é a mais importante, porque é a camada onde o dev front end mais trabalha):
+https://prnt.sc/1V0BfRDtGgCX
+Aqui estão os protocolos em geral: HTTP, FTP, SMTP, etc.
+
+Anatomia do IPV4 (mais utilizado atualmente, mas há uma migração sendo feita para o V6)...
+Existem IPs de classes diferentes: A, B e C.
+Cada parte do IP possuirá um numero de 0 a 255, exemplo:
+192.168.100.230 (os pontos definem as partes diferentes do IP)
+
+IP de classe A (tem poucas redes classe A no mundo): https://prnt.sc/1W0fpJILnStk 
+IP de classe B (tem mais redes classe B no mundo): https://prnt.sc/alydV-1_mOUN
+IP de classe C (mais usado no mundo): https://prnt.sc/x2A5aomp3QTj
+
+///////////////////////////////////////////////////////////////////////////////
+Conceito de Porta:
+A porta é o numero que define um processo dentro de uma maquina. Nesse sentido, caso eu queira acessar um processo(porta) de outra maquina, vou utilizar o padrao de `:` logo apos o endereço de IP. Exemplo: https://prnt.sc/HqIM1n-yhGQ8
+192.168.100.1:8080
