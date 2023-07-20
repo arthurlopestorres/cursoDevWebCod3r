@@ -1,0 +1,30 @@
+ESTAREI TRATANDO SOBRE AS AULAS 6 E 7 AQUI
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+utilizando o comando npm init para poder iniciar um novo projeto e, a partir dai, ir preenchendo as informações que quero a respeito do projeto. Fazer isso faz com que um novo arquivo chamado "package.json" seja criado contendo os dados do projeto
+para fazer com que todas as perguntas do formulario sejam respondidas automaticamente, posso adicionar o comando -y a npm init, ficando assim: 'npm init -y'
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+o arquivo package.json tem como principal objetivo conter todas as informações a respeito do projeto. Para que eu possa, então salvar no arquivo package.json as dependencias que eu importar para minha aplicação, preciso utilizar o comando: npm i --save [nome da biblioteca terceira] / exemplo:
+npm i --save axios
+Quando rodei esse comando acima, foi adicionado um objeto 'dependencies' no arquivo package.json que contem o axios e a versão dele.
+
+observações a respeito da dependencia listada:
+
+"axios": "^1.4.0"
+O versionamento segue a seguinte logica: [indicador de possibilidade de alteração (^)].[major version (1)].[minor version (4)].[fix version (0)]
+
+O acento circunflexo ( ^ ) percebido no começo do numero da versão indica que apenas o minor version poderá ser alterado.
+Caso o simbolo fosse ( ~ ), por exemplo, significa que o fix version pode ser alterado.
+
+Se não houve nenhum dos simbolos acima, será compatível com a aplicação apenas esta versão em específico.
+
+Para que eu possa instalar uma versão em específico de uma biblioteca terceira utilizo o comando de instalação (npm i) da seguinte forma:
+"npm i --save-dev axios@1.4.0 -E" 
+(-dev aqui significa que esta biblioteca é usada apenas em desenvolvimento e não em produção) 
+(@[numero] é o que indica a version)
+(-E indica que precisa ser exatamente esta versão)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+O arquivo package-lock precisa ir para o repositorio, porque é um arquivo que retorna de forma mais precisa os dados do projeto e do versionamento das bibliotecas sendo utilizadas.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+O Axios, que instalamos nessa aula é um client http, assim, ele faz requisições para obter informações de algo remoto (em um servidor fora da nossa máquina)

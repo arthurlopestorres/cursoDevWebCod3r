@@ -1,0 +1,23 @@
+NodeJS é um liguaguagem de backend, baseada no JavaScript (frontend)
+É possível construir sistemas inteiros utilizando JavaScript (frontend e backend utilizando NodeJS)
+Outras linguagens backend são: JAVA, PHP, Python, etc.
+
+O node utiliza o mesmo interpretador de código que browser utiliza.
+o interessante a respeito de javascript é que ela é uma linguagem que pode ser rodada tanto no browser como no servidor, diferente do JAVA, por exemplo.
+
+NodeJS é o ambiente de execução (runtime) do JS na parte do servidor (não está rodando no browser)
+Ryan Dahl foi o criador do NODEJS. (e do DENO também, que preciso estudar mais para frente)
+
+NODE, no principio, não tinha a ideia de rodar JS no backend, na realidade, nasceu para fazer a parte de I/O de uma forma correta.
+Obs.: qualquer leitura de arquivo envolve I/O
+
+O NODEJS nasceu com a ideia de ser um ambiente assincrono. O JS é uma linguagem para trabalho em ambientes assincronos.
+
+No NODE.JS, a gente escreve em JS, e uma engine (V8) interpreta os dados para backend. Esse dados são trocados com a LIBUV, que é responsavel por fazer todo o assincronismo do node.js
+
+Cada troca de dados a partir de uma interação de usuário acaba gerando uma thread. Quanto mais threads acontecerem ao mesmo tempo, mais pesado fica o sistema, por isso não se pode ter processamentos muito pesados simultaneamente.
+
+resumo///////////////////////////////////////////////////////////
+NODE.JS é um runtime de JavaScript que é formado por duas partes:
+1- V8 que é um interpretador de código aberto do Google.
+2- LIBUV que é o responsavel por ler banco de dados, acessar arquivos, etc. (processo mais lento.)

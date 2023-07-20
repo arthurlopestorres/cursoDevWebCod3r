@@ -1,0 +1,2 @@
+//no padrão middleware (chain of resposability), não amarração entre as etapas de um processo, de forma que, uma etapa pode ser usada em cotextos diferentes, para a realização de uma tarefa em específico.
+//No Express, nós sempre recebemos um request e uma response, de forma que, essas informações que vêm no request e response, são tratadas nos passos que a gente cria dentro do programa.
