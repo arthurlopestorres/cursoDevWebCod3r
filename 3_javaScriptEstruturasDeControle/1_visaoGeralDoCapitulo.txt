@@ -1,0 +1,3 @@
+Vamos falar bastante de estruturas de controle. 
+Vamos verificar, nesse modulo, um pouco mais sobre boolean, exemplo !'' = falso e !' ' - verdadeiro
+Não existe programação sem as estruturas de controle.
