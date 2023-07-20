@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "name": "9_esnext",
+  "version": "1.0.0",
+  "main": "21_asyncAwait2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
