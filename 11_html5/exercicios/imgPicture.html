@@ -1,0 +1,103 @@
+<style>
+    .texto{
+        width: 400px;
+    }
+    .texto img{
+        margin-right: 10px;
+    }
+    .cidade{
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+
+    p{
+        position: absolute;
+        display: none;
+    }
+</style>
+
+<div wm-slider>
+    <!-- nossas imagens estarão dentro de uma tag p. Esse recurso também será utilizado para que o slider funcione corretamente. -->
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="descricao da imagem 1" width="513px" height="342px" title="titulo da imagem, quando colocamos o cursor em cima">
+    </p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="intro cod3r" height="342px">
+    </p>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="descricao da imagem 2" height="342px">
+    </p>
+    
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="avatar imagem 4" height="50" align="left">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellendus? Culpa dicta illo repudiandae! Quasi impedit nobis vero maiores, nisi repellendus? Ipsa rem facilis enim commodi molestiae amet sequi esse?
+    </p>
+    
+    <!-- vamos aplicar imagem a partir de uma classe css -->
+    <p class="cidade"></p>
+    
+    <!-- usando a tag picture, nela, consigo colocar varias imagens diferentes e posso aplicar critérios para que essas imagens sejam exibidas, ou não. Para exibir o contudo, insito a tag "source" e as condições são inserias como parâmetros da tag source, nesse caso, minimo de 600px de largura. Caso a condição não seja satisfeita, somos redirecionados para proxima imagem no lugar e assim por diante. -->
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreia.png" alt="Logo">
+        </picture>
+    </p>
+</div>
+
+
+<script>
+    //desafio: as imagens devem ficar rodando como slider
+    function mover (elemento, inicio, fim, passo, callback){
+        // aqui, estamos capturando o elemento, a posiçao inicial, a posiçao final, o passo que o elemento vai dar (o quanto vai se mover) e uma funcao de callback que executa essa ação para o proximo elementos
+        const novoInicio = inicio - passo
+        if(novoInicio >= fim){
+            elemento.style.left = `${novoInicio}px`
+            setTimeout(() => {
+                mover(elemento, novoInicio, fim, passo, callback)
+            }, 7);
+        } else {
+            callback()
+        }
+    }
+
+    // const p = document.querySelector('[wm-slider] > p')
+    // p.style.display = 'block'
+    // mover(p, 1500, -600, 5, () =>{
+    //     console.log('terminou')
+    // })
+
+    function slider() {
+        // o querySelectorAll retorna um nodeList, que é diferente de um array (não possui as mesmas propriedades)
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        // para transformar um nodeList num array, preciso usar a funcao "Array.from(nodeList)"
+        const slides = Array.from(elementos)
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide){
+        slide.style.display = 'block'
+        // precisamos, agora, obter a largura total atual da tela que estamos testando.
+        // para isso, precisamos utilizar a propriedade innerWidth
+        const inicio = innerWidth
+        const fim = -slide.clientWidth
+
+        slide.style.left = `{inicio}px`
+
+        mover(slide, inicio, fim, 5, () => {
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+    }
+
+    function getProximo(lista, atual){
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+    }
+
+    slider();
+</script>

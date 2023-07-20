@@ -1,0 +1,66 @@
+<!-- a tag que define uma tabela é a tag "table" -->
+<table>
+    <!-- posso adicionar um caption para inserir o que representa essa tabela -->
+    <caption>Produtos</caption>
+    <!-- assim como na tag body, posso dividir a tabela em 3 partes: cabeça, corpo e rodapé -->
+    <!-- cabeçalho da tabela: -->
+    <thead>
+        <!-- toda vez que eu quiser fazer uma nova linha na tabela: tr -->
+        <!-- toda vez que eu quiser fazer uma coluna (titulo): th (as colunas ficam dentro da linha de tituloas da colunas) -->
+        <tr>
+            <th>Produto</th>
+            <th>Preco</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <!-- corpo da tabela é tbody -->
+    <tbody>
+        <tr>
+            <!-- diferente do head, no body eu vou adicionar td ao invez de th, porque nao estou definindo titulos e sim dados -->
+            <td>iPad</td>
+            <td>4000,00</td>
+            <td>5</td>
+            <td>20000,00</td>
+        </tr>
+        <tr>
+            <td>Samsung S23</td>
+            <td>6000,00</td>
+            <td>5</td>
+            <td>30000,00</td>
+        </tr>
+    </tbody>
+    <!-- rodapé da table é tfoot -->
+    <tfoot>
+        <!-- para que um td ocupe mais de uma coluna, preciso utiliza propriedade colspan -->
+        <!-- para que um td ocupe mais de uma linha, preciso utilizar rowspan -->
+        <tr>
+            <td colspan="3" rowspan="2">Total</td>
+            <td>50000,00</td>
+        </tr>
+        <!-- <tr>
+            <td>teste para rowspan</td>
+        </tr> -->
+    </tfoot>
+</table>
+
+<!-- vamos agora aplicar estilo à tabela: -->
+<style>
+    table{
+        border-collapse: collapse;
+    }
+    th, td{
+        padding: 10px;
+    }
+    thead tr{
+        border-bottom: solid 3px #444;
+    }
+    tbody tr:hover{
+        background-color: #dedede;
+    }
+    tfoot{
+        background-color: #444;
+        color: white;
+        font-weight: bold;
+    }
+</style>

@@ -1,0 +1,80 @@
+<!-- listas aninhadas sao listas dentro de listas, como uma arvore de cateogrias e departamentos, por exemplo -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../exercicios/css/listasAninhadas.css">
+    <title>listas aninhadas</title>
+</head>
+<body>
+
+<h1 class="mainTitle">Departamentos</h1>    
+<ul class="menu">
+        <li class="departamento folder">
+            <h2>Departamento 1</h2>
+            <ul class="categoriesList hidden">
+                <li class="categoriesList-category folder">
+                    <h3>Dep1 - cat1</h3> 
+                    <ul class="subcategoriesList hidden">
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                    </ul>
+                </li>
+                <li class="categoriesList-category folder">
+                    <h3>Dep1 - cat2</h3> 
+                    <ul class="subcategoriesList hidden">
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                    </ul>
+                </li>
+                <li class="categoriesList-category folder">
+                    <h3>Dep1 - cat3</h3> 
+                    <ul class="subcategoriesList hidden">
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="departamento folder">
+            <h2>Departamento 2</h2>
+            <ul class="categoriesList hidden">
+                <li class="categoriesList-category folder">
+                    <h3>categoria 1</h3> 
+                    <ul class="subcategoriesList hidden">
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                    </ul>
+                </li>
+                <li class="categoriesList-category folder">
+                    <h3>categoria 2</h3> 
+                    <ul class="subcategoriesList hidden">
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                    </ul>
+                </li>
+                <li class="categoriesList-category folder">
+                    <h3>categoria 3</h3> 
+                    <ul class="subcategoriesList hidden">
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                        <li class="subcategoriesList-subcategory">subcategoria</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script src="../exercicios/js/listasAninhadas.js"></script>
+    <script>
+        //anotação sobre a solução do curso (a minha solução está em index.js)
+        //1- ele utilizou o parametro "[elemento].nextElementSibling" para obter o elemento irmão imediatamente seguinte no HTML.
+        //2- ele manipulou direto o elemento style.display
+    </script>
+</body>
+</html>

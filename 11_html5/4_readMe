@@ -1,0 +1,5 @@
+na aula 4, foi instalado o http-server do node a partir do comando npm i -g http-server e foi criado o arquivo index.html
+foi criada uma pasta chamada 'Exercicios'
+
+Foram criados os arquivos index.js e index.css para acompanhar o html
+Depois de criar a estrutura inicial, fazer a leitura do arquivo index.js

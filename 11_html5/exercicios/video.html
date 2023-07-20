@@ -1,0 +1,88 @@
+<!-- ! para chamar um video, primeiro utilizamos a tag video, e dentro de video, utilizamos a tag source, que é onde a gente vai ter um controle maior sobre o arquivo de video -->
+
+<!-- ? "controls" precisamos inserir o parametro na tag video para adicionar os controles normais de videos (botar de play, barra de progresso, volume, etc.) -->
+<!-- ? "autoplay" precisamos inserir o parametro na tag video para que o video comese a ser reproduzido automaticamente -->
+<!-- ? "controlsList="nodownload"" precisamos adicionar à tag video, para que possamos impedir os users de fazerem download do video. -->
+
+<video id="meuVideo" width="400px" height="250px" controls controlsList="nodownload" class="meuVideo">
+    <source class="videoSource" src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu Browser não suporta a tag de vídeo.
+</video>
+
+<div wm-progresso="meuVideo" class="pregressBar">
+    <div class="pregressBar--progress"></div>
+</div>
+
+<div class="interactiveButtons">
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .pregressBar{
+        height: 20px;
+        width: 500px;
+        border: 1px #444 solid;
+        margin: 20px;
+        padding: 0;
+    }
+
+    .pregressBar--progress{
+        background-color: red;
+        color: white;
+        height: 100%;
+        text-align: left;
+        font-size: 14px;
+        width: 0%;
+    }
+
+    .interactiveButtons button{
+        cursor: pointer;
+    }
+</style>
+
+<!-- ? agora, vamos fazer um desafio que seria de dar play e pouse no video a partir dos botões customizados, e depois preencher a barra de progresso conforme o vídeo estiver sendo reproduzido -->
+
+<!-- !não consegui fazer a barra de progresso, por não conseguir, de forma alguma, capturar o tempo total do video (duration) -->
+<!-- * no fim das contas, estava correta minha ideia e funcionou normalmente tentando novamente: -->
+<!-- * (tempoAtual [video.currentTime] / tempoTotal [video.duration]) * 100  -->
+<!-- * depois passar esse percentual como width para a div de carregamento -->
+
+<script>
+    const playButton = document.querySelector('[wm-play]')
+    const pauseButton = document.querySelector('[wm-pause]')
+    const progressBar = document.querySelector('.pregressBar--progress')
+    const video = document.getElementById('meuVideo')
+
+    // vamos configurar fazer algumas configurações no video:
+    function configurarVideo(id){
+        const video = document.getElementById(id)
+        // o parametro abaixo faz com que nao seja possivel baixar o video clicando com o botao direito nele.
+        video.oncontextmenu = () => false 
+    }
+
+    // reproduzindo e pausando
+    function videoPlay(){
+        video.play()
+    }
+    function pauseVideo(){
+        video.pause()
+    }
+
+    // barra de progresso
+    function updateProgressBar(){
+        const videoPlayer = document.getElementById('meuVideo')
+        const divProgresso = document.getElementsByClassName('pregressBar--progress')[0]
+        setInterval(() => {
+            const percentual = (videoPlayer.currentTime / videoPlayer.duration) * 100
+            divProgresso.style.width = `${percentual}%`
+            divProgresso.innerHTML = `${percentual.toFixed(1)}%`
+        }, 100)
+    }
+
+    // chamadas
+    configurarVideo('meuVideo')
+    playButton.addEventListener('click', videoPlay)
+    pauseButton.addEventListener('click', pauseVideo)
+    updateProgressBar()
+</script>

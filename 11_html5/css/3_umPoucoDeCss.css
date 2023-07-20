@@ -1,0 +1,15 @@
+h1 {
+    font-size: 20px;
+}
+.fundoVermelho{
+    background: red;
+}
+.Negrito{
+    font-weight: bold;
+}
+#texto1{
+    font-size: 40px;
+}
+.fontSizeLarge{
+    font-size: 200px;
+}

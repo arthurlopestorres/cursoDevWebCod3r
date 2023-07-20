@@ -1,0 +1,38 @@
+<!--! as tags div e span são criadas para criar áreas / divisões -->
+<!--! div trata-se mais de grupo de informações (elementos na página) -->
+<!--? por padrão a div é display block -->
+<div></div>
+<!--! span é mais utilizada num contexto inline (dentro de um texto) -->
+<!--? por padrão o span é display inline -->
+<span></span>
+
+<!--! tags semânticas -->
+<!--? section -> essa tag serve para agrupamentos temáticos -->
+<!--? article -> conteudo isolado da seção onde ele está (não tem a ver com o restanta da seção onde ele está) -->
+<!--? head -> cabeçalho da página -->
+<!--? footer -> rodapé da página -->
+<!--? nav -> agrupamento de links, como um menu, por exemplo -->
+<!--? aside -> sidebar, ou filtro lateral, por exemplo. -->
+<!--? details -> detalhes a respeito de um produto por exemplo (contem descrição) -->
+
+<!--! as famosas (mais antigas) -->
+<!--? div -> divisao de conteudos -->
+<!--? span -> divisao de conteudos dentro de um texto -->
+<div>area 1</div>
+<div>area 2</div>
+
+<p>esse é um texto com <span class="diferente">span</span>.</p>
+
+<style>
+    div{
+        /* faz com que ambos os elementos fiquem na mesma linha: */
+        display: inline;
+    }
+
+    .diferente{
+        /* o display block faz com que ele ocupe uma linha inteira: */
+        display: block;
+        color: blue;
+        font-weight: bold;
+    }
+</style>

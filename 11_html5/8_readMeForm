@@ -1,0 +1,7 @@
+criamos uma pasta chamada "form" dentro de html/exercicios. Nessa pasta estamos codando um formulario integrado com um "mini servidor" criado no arquivo server.js. O server, nesse caso, é responsável por tratar as requisições e respostas de servidor, diferente de um banco de dados, que é responsável por guardar e fornecer dados guardados.
+
+No arquivo form.html, abordamos uma série de tags relacionadas a formulário, iputs, buttos, etc.
+
+Na aula 227, vimos como utilizar mais de um metodo no mesmo form (tanto post, quanto put):
+1- criar segundo botao e colocar uma action diferente, direto no botao
+posso utilizar um input escondido, que tem a propriedade "type="hidden"" para trabalhar com values escondidos via js, sem atrapalhar a form principal

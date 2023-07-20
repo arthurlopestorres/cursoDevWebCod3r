@@ -1,0 +1,28 @@
+<!-- SaSS e LESS são formais mais sustentáveis de escrever css
+ Vamos falar do minimo de css primeiro  -->
+ <!-- nesta aula, vimos o comando js document.querySelector -> retorna apenas 1 elemento com determinada classe, id ou tag e o comando document.querySelectorAll, que retorna todos os elementos (array) que possuem determinada classe, id ou tag -->
+ <!-- posso encotrar elementos com atributo customizado a partir do querySelector('[nome do atributo]'), exemplo: document.querySelector('[arthur]') -->
+
+ <!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um pouco de CSS</title>
+    <!-- importando arquivo css para o html: -->
+    <link rel="stylesheet" href="./css/3_umPoucoDeCss.css">
+ </head>
+ <body>
+    <h1>CSS</h1>
+    <!-- podemos colocar um id para cada tag html. o id tem a ideia de ser um identificador unico dentro de uma pagina, assim, nao se deve usar o mesmo id para mais de uma tag diferentes. NUNCA -->
+    <span id="texto1">texto 1</span><br>
+    <!-- class está mais relacioanda a estilo, então é comum que elementos diferentes estejam vinculados à mesma class. -->
+    <span class="fundoVermelho Negrito">texto 2</span><br>
+
+    <!-- posso colocar css diretamente dentro de uma tag HTML na propriedade Style -->
+    <span class="fundoVermelho" arthur>texto 3</span>
+
+    <!-- importando arquivo js -->
+    <script src="./js/3_umPoucoDeJs.js"></script>
+ </body>
+ </html>
