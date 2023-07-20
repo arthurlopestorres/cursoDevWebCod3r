@@ -1,0 +1,37 @@
+/* !CLASSES SÃO CASE SENSITIVE */
+
+/*? para acessar a classe de um item no html, vou utilizar "." */
+/*? entre chaves, escrevemos todo o código css. */
+
+.seletor{
+    /** aqui dentro, posso colocar todo o estilo que esse elemento vai receber */
+    color: #222;
+    font-size: 30px;
+    text-align: center;
+    /** há propriedades que podem receber multipos valores */
+    border: solid 5px navy; /** essa é uma propriedade das chamadas "shorthand properties": estou passando propriedades diferentes, para uma mesma customização visual, mas eu poderia estabelecer cada uma dessas cracterísticas em propriedades diferentes *
+    /** posso utilizar paramentros alternativos para um mesmo seletor. O "ou", nesse caso, é definido com uma vírgura, exemplo: font-family: a, b -> aqui, se 'a' não funcionar, aplique 'b' */
+    font-family: Helvetico, monospace; /**'helvetico' nesse caso nao existe, entao monospace é aplicado*
+    /** consigo chamar funções predefinidas no css: */
+    width: calc(100% - 100px); /**aqui, estou pegando o valor totar da largura e subtraindo 100px*/
+    background-color: rgb(40, 100, 189); /** (vermelho, verde, azul) */
+}
+
+/** usando uma pseudo-classe (classes aplicadas quando determinada condição for atendida) */
+/** para acessar uma pseudo-classe, utilizado ':' */
+.seletor:hover {
+    background-color: rgb(255, 100, 100);
+    cursor: pointer;
+}
+
+/** Usando um pseudo-elemento (altero as propriedade de um elemento em especifico dentro da classe - ou elemento selecionado) */
+/** para acessar pseudo-elementos, utiliza-se '::' */
+/** eles são pré-definidos pelo css */
+.seletor::first-letter{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+/*? padrão de nomenclatura? */
+/** o padrão camelCase(arthurLopes) ou dash-case(arthur-lopes) podem ambos serem utilizados sem problemas, desde que exista um padrão de uso no código */
+/*! dash-case será o padrão aqui nas aulas */

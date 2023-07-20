@@ -1,0 +1,10 @@
+Nesse capítulo, comecei adicionando todos os arquivos HTML vistos aqui, já no inicio, conforme instruido pelo professor.
+
+Sempre devo acessar o arquivo index.html para acompanhar direitinho o curso por lá.
+
+CSS é uma folha de estilo que funciona em cascata (Cascade Style Sheet)
+
+Se o codigo que a gente escreve é simples e funcional, ninguem vai falar contrario.
+Dificilmente vou estar errado de usar classes para aplicar estilos em elementos.
+
+Precisamos favorecer o reuso do codigo, para que ele fique mais sustentável. Utilizar classes que englobem vários elementos pode ser uma ótima ideia.
