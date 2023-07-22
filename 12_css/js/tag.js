@@ -1,5 +1,4 @@
-//! queremos fazer com que, em cada elemento, seja exibido o nome da tag
-const allTags = Array.from(document.querySelectorAll('.tag')) 
+//! queremos fazer com que, em cada elemento, seja exibido o nome da tag e caracteristicas proprias
 const colorDictionary = {
     p: '#388e3c',
     div: '#1565c0',
@@ -16,13 +15,16 @@ const colorDictionary = {
     padrao: '#616161',
 }
 
+const allTags = document.querySelectorAll('.tag')
 allTags.forEach(tag => {
     const tagName = tag.tagName.toLowerCase()
+    tag.style.borderColor = colorDictionary[tagName]
 
-    let span = document.createElement("span")
-    span.textContent = `${tagName}`
-    span.classList.add('elementTag')
-    span.style.color = colorDictionary[tagName]
-
-    tag.insertAdjacentElement('afterbegin', span)
+    if(!tag.classList.contains('nolabel')){ 
+        const label = document.createElement("span")
+        label.classList.add('elementTag')
+        label.textContent = `${tagName}`
+        label.style.color = colorDictionary[tagName]
+        tag.insertAdjacentElement('afterbegin', label)
+    }   
 })
