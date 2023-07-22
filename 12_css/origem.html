@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
+
+    <!--! O 'rel', percebido na tag abaixo, estabelece a relação que essa tag tem com o html em contexto, nesse caso, folha de estilo. Sem a relação, a folha de estilo não se aplica. -->
+    <!--? existe prioridade entre o arquivo css e a tag "style"? -->
+    <!--* a prioridade é definida pela ordem de declaração dos comandos no HTML, o que vem por ultimo aqui no html é que é levado em conta. -->
+
     <link rel="stylesheet" href="./css/origem.css">
+
+    <!-- Não é recomendado inserir CSS in line. Devemos evitar sempre que possível! -->
+    <!--! O CSS in line será priorizado em relação ao arquivo css e à tag style  -->
 </head>
 <body>
     <h1>E agora?</h1>

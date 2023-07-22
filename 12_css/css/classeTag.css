@@ -1,0 +1,30 @@
+/*! uma coisa importante de saber, é que os elementos em css são como caixas, eles possuem o formato de caixa por padrão. (ele possui altura e largura) */
+
+/*? uma vez que a gente coloca parâmetros num componente pai, que podem ser aplicados aos componentes filhos, eles herdam os parâmetros do pai. */
+/** Nesse caso, estamos colocando o parametro font-size no body para que todos os textos, por default, tenham font-size: 40px; e que possuam border e margin (estou aqui manipulando o body a partir da classe .tag, porque a primeira vez que essa tag aparece é, justamente, na tag body */
+body{
+    font-size: 40px;
+}
+.tag {
+    border: solid 4px;
+    margin: 5px;
+}
+
+/** quero que tanto ul, quanto ol, tenham as seguintes propriedades: */
+ul, ol {
+    padding: 0;
+}
+
+li{
+    margin-left: 60px;
+}
+
+/*! depois de fazer essas configurações iniciais acima, fomos para o arquivo tag.js */
+/* foi feita uma funcao para exibir o nome da tag html em cada elemento */
+
+.elementTag{
+    background-color: #616161;
+    font-size: 30px;
+    vertical-align: top;
+    margin-right: 10px;
+}
