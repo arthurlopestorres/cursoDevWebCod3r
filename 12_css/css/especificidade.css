@@ -1,1 +1,67 @@
 /*! Aula 1 */
+/** em especificidade, vamos estudar a ordem em que um seletor é selecionado no css */
+/** no browser, a listagem de css exibida segue a ordem de cima para baixo do mais especifico para o menos especifico */
+
+/*? verificar esta documentação ao estudar: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+/** em linhas gerais, a ordem de especificidade (do maior para o menor) é a seguinte: 
+1. regra com !important -> o uso do important não é recomendado, porque pode gerar um ciclo vicioso
+2. seletores mais específicos -> como style inline no html, por exemplo
+3. última regra processada tem prioridade
+*/
+
+/** vamos trabalhar com alguns exemplos: */
+
+p.observacao{
+    background: linear-gradient(to right, red, yellow, blue);
+    padding: 30px;
+}
+
+.observacao{
+    background-color: aquamarine;
+    border: dashed 5px;
+    padding: 20px!important; /*esse important sobrepoe o padding colocado no seletor mais especifico acima.*/
+    font-size: 40px;
+}
+/* o p abaixo é bastante genérico */
+p{
+    background-color: #aaa;
+}
+/*? a classe é mais específica do que uma tag p, vamos usar então uma classe antes do p para ver isso, e percebemos que ela será priorizada em relação à regra mais geral (que é chamar todas as tags p nesse caso)*/
+
+/*? vamos associar, agora, uma classe a um parágrafo 'p.observacao' - é ainda mais específico do que a classe, e foi inserido antes da classe, no inicido do exemplo. Podemos ver que o parametro nele sobrescreve a regra aplicada na classe */
+
+/*! Aula 2 */
+/* ? esse site nos ajuda a entender qual regra de especificidade é maior (quanto maior o resultado, maior a especificidade) -  https://specificity.keegan.st */
+
+/** falando sobre o seletor, a ordem de especificidade é a seguinte:
+1. Inline (direto no doc html)
+2. ID
+3. Classe, Pseudo-Classe, atributo
+4. Elementos, Pseudo-Elementos
+*/
+
+/** vamos a alguns exemplos */
+div{ /* especificidade super baixa (especificidade 1) */
+    background-color: blue;
+    color: #fff;
+}
+
+div[wm-cor]{ /* mais especifico do que o de cima, por isso ganha (especificidade 11) */
+    background-color: red;
+    color: #fff;
+}
+
+div:hover{ /* mais especifico que o primeiro, mas com a mesma especificidade do de cima, só ganha pela sequencia (especificidade 11) */
+    background-color: purple;
+}
+
+div.estilo{ /* (especificidade 11), ganha por sequencia dos demais de cima, e do primeiro, por maior especificidade */
+    background: green;
+}
+
+#unico1, #unico2{ /* (especificidade 100), ganha dos demais por mais por maior especificidade */
+    background: black;
+}
+
+/* por ultimo, inserimos um style inline na primeira div, o que tem especificidade 1000, então sobrepõe todo o restante. */

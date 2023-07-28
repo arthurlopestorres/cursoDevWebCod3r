@@ -48,6 +48,6 @@ body {
     background-color: rgba(79, 173, 219, .4);
 }
 
-.firstColumn > :nth-child(1), .firstColumn > :nth-child(2), .firstColumn > :nth-child(3), .firstColumn > :nth-child(4), .firstColumn > :nth-child(5), .firstColumn > :nth-child(6){
+.firstColumn > :nth-child(1), .firstColumn > :nth-child(2), .firstColumn > :nth-child(3), .firstColumn > :nth-child(4), .firstColumn > :nth-child(5), .firstColumn > :nth-child(6), .firstColumn > :nth-child(7), .firstColumn > :nth-child(8){
     background: green!important;
 }
