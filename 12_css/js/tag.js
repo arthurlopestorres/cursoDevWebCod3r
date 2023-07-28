@@ -26,5 +26,5 @@ allTags.forEach(tag => {
         label.textContent = `${tagName}`
         label.style.color = colorDictionary[tagName]
         tag.insertAdjacentElement('afterbegin', label)
-    }   
+    }
 })

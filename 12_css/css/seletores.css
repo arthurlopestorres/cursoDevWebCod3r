@@ -1,0 +1,152 @@
+/* Vamos nessa aula falar de seletores -> como selecionar elementos do HTML via CSS */
+
+/* Para selecionar todos os elementos usamos '*' */
+*{
+}
+
+/* Para selecionar todos os elementos da mesma tag, informo diretamente a tag */
+h1, h2, p, span, button, ul{
+}
+
+/* para que eu possa selecionar uma classe em específico, utilizo o seletor '.' */
+.class{
+}
+
+/* para selecionar um elemento via id, uso '#' */
+#id{
+}
+
+/* para selecionar os elementos a partir de um atributo dele, posso usar '[]' */
+[atributo]{
+}
+
+/* pseudo-classe é definida por : */
+/*? exemplo de pseudo-classe: hover */
+.class:pseudoClasse{
+}
+
+/* pseudo-elementos são definidos por '::' */
+/*? exemplos de pseudo-elementos: after e before */
+.class::pseudoElemento{
+}
+
+/* para selecionar irmão (sibling) adjacente podemos usar '+' */
+.class + elemento{
+}
+
+/* para selecionar qualquer irmão de um certo tipo, usamos '~' */
+.class ~ elemento{
+}
+
+/* para selecionar filh direto (não de niveis mais distantes), utilizamos '>' */
+.class > filho{
+}
+
+/* para selecionar descendente apenas utilizamos espaço */
+.class elementoDescendente{
+}
+
+/* /////////////////////////////////////////////////////////// */
+/* ! Aula 2 */
+
+/** selecionando todos */
+*{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Selecionando classe */
+.tag{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Selecioando ID */
+#aprovados{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Selecionando elemento filho diretamente */
+#aninhado > div{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** tentando selecionar um filho direto que não é filho direto (esta um nivel mais longe). Nao funciona: */
+#aninhado > section{ 
+    color: #ff0;
+    background-color: #f77;
+}
+
+/** Para selecionar section, do exemplo acima, bastaria eu remover o seletor de decendente direto: */
+#aninhado section{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Selecionando irmão adjacente */
+p + ul{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** OL não é adjacente (não está declarado como irmao imediatamente depois ou antes). Não funciona: */
+p + ol{
+    color: #ff0;
+    background-color: #f77;
+}
+
+/** Para resolver o cenário acima, eu precisaria mudar o seletor para "general sibling". Funciona! */
+p ~ ol{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Selencionado por atributo (todos que tiverem esse atributo). Funciona! */
+[feira]{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Selencionado por atributo (apenas um que tiver o valor especifico). Funciona! */
+[feira = "escritorio empresa"]{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Posso selecionar por atributo que contenha um termo inteiro. Funciona! */
+[feira ~= escritorio]{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Posso selecionar por atributo que contenho certas letras. Funciona! */
+[feira *= sa]{
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** para selecionar o primeiro filho de algum tipo, exemplo: o primeiro filho de alguem que seja SPAN. Funciona! */
+span:nth-child(1){
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Selecionando os filhos impares de alguem. Funciona!: */
+section > :nth-child(odd){
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Selecionando os filhos pares de alguem. Funciona!: */
+section > :nth-child(even){
+    /* color: #ff0;
+    background-color: #f77; */
+}
+
+/** Encontrar o filho sequencial de alguem de um tipo especifico, nesse caso, o segundo span filho direto de section */
+section > span:nth-of-type(2){
+    color: #ff0;
+    background-color: #f77;
+}

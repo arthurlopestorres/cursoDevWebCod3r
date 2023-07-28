@@ -48,14 +48,6 @@ body {
     background-color: rgba(79, 173, 219, .4);
 }
 
-.firstColumn > :nth-child(1){
-    background: green!important;
-}
-
-.firstColumn > :nth-child(2){
-    background: green!important;
-}
-
-.firstColumn > :nth-child(3){
+.firstColumn > :nth-child(1), .firstColumn > :nth-child(2), .firstColumn > :nth-child(3), .firstColumn > :nth-child(4), .firstColumn > :nth-child(5){
     background: green!important;
 }
