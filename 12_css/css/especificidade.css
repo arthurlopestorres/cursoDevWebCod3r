@@ -42,21 +42,21 @@ p{
 */
 
 /** vamos a alguns exemplos */
-div{ /* especificidade super baixa (especificidade 1) */
+div{ /* (especificidade 1) especificidade super baixa */
     background-color: blue;
     color: #fff;
 }
 
-div[wm-cor]{ /* mais especifico do que o de cima, por isso ganha (especificidade 11) */
+div[wm-cor]{ /* (especificidade 11) mais especifico do que o de cima, por isso ganha */
     background-color: red;
     color: #fff;
 }
 
-div:hover{ /* mais especifico que o primeiro, mas com a mesma especificidade do de cima, só ganha pela sequencia (especificidade 11) */
+div:hover{ /* (especificidade 11) mais especifico que o primeiro, mas com a mesma especificidade do de cima, só ganha pela sequencia */
     background-color: purple;
 }
 
-div.estilo{ /* (especificidade 11), ganha por sequencia dos demais de cima, e do primeiro, por maior especificidade */
+div.estilo{ /* (especificidade 11), ganha por sequencia dos demais de cima e, do primeiro, por maior especificidade */
     background: green;
 }
 

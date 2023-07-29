@@ -38,7 +38,7 @@ h1, h2, p, span, button, ul{
 .class ~ elemento{
 }
 
-/* para selecionar filh direto (não de niveis mais distantes), utilizamos '>' */
+/* para selecionar filho direto (não de niveis mais distantes), utilizamos '>' */
 .class > filho{
 }
 

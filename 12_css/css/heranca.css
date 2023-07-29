@@ -2,7 +2,7 @@
 
 body{ 
     /*? podemos perceber aqui que as propriedades de font foram transmitidas para todos os elementos filhos, mas nao border e padding.*/
-    /** vale ressaltar, que o h1 nem sepre herda font-size, porque o navegador pode estar aplicando estilização padrão */
+    /** vale ressaltar, que o h1 nem sempre herda font-size, porque o navegador pode estar aplicando estilização padrão */
     font-family: monospace;
     font-size: 40px;
     border: solid 3px red;
