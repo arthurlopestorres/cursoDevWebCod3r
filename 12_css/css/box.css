@@ -1,0 +1,10 @@
+/** o box model está presente em praticamente todos os elementos do HTML, mas não em todos, porque alguns deles não são visuais. */
+
+/*? O padding é o espaço entre o conteúdo de um elemento e sua borda. */
+/** o padding, ao ser declarado, possui alguns atalhos nos valores sendo passados: */
+/* padding: (top) (right) (bottom) (left), exemplo: padding: 0px 2px 0px 2px */
+/* padding: (top/bottom) (right/left), exemplo: padding: 0px 2px (é a mesma coisa que o exemplo de cima) */
+/* padding: (top/right/bottom/left), exemplo: padding: 2px (aplica 2px em todos os lados) */
+
+/*? A margin vai dar espaçamento entre o elemento e seus vizinhos */
+/** a logica do margin para espaçamento segue a mesma regra de valor do padding */
