@@ -1,0 +1,65 @@
+/** O display pode receber vários parametros diferentes, que definem, muitas vezes, como os elementos serão exibidos na página. 
+display: none => faz com que o elemento não seja exibido
+display: block => default na maioria das vezes
+display: inline-block => faz com que todos os elemento sejam blocos, mas na mesma linha
+display: grid => faz com que os elementos sejam organizados em css grid box.
+display: flex => faz com que os elementos sejam organizados em css flex box.
+*/
+
+/*! código da aula 1 */
+body{
+    font-size: 40px;
+    color: #fff;
+    background-color: coral;
+}
+
+ul{
+    padding: 0px;
+}
+
+div{
+    background-color: seagreen;
+}
+
+span{
+    background-color: dodgerblue;
+}
+
+li{
+    background-color: purple;
+}
+
+div, span, li{
+    width: 50%; /* aplicando esta configuração, percebemos que a div e lis estão respeitando largura de 50% do elemento pai. O span já não respeita a mesma coisa, porque possui um display diferente nativamente (não é display: block). O width: 50% faz com que a largura seja relativa à do elemento pai. */
+    width: 200px; /* difinindo a width em valor não relativo, a largura será definida indepentemente da largura do elemento pai. Podemos reparar o que o SPAN não respeita esse tipo de declaração de largura também. */
+    height: 80px;
+    padding-top: 30px; /* SPAN respeitou este parametro. */
+    text-align: center; /* para centralizar os textos */
+
+    /** agora, vamos comerçar a tratar da propriedade display (tema da aula) */
+    display: block; /* aqui, estamos mudando o display apenas do SPAN que, por padrão, é display: inline. 
+    O display: block faz com que cada elemento ocupe uma linha dentro do elemento pai (mesmo que suas larguras lhes permitam alinhar-se na view), e passa a fazer com que o elemento respeite parametros de largura e altura. 
+    As tags LI, por padrão, utilizam o display: list-item */
+
+    display: inline; /* faz com que os elementos fiquem na mesma linha,  deixando de respeitar parametros que manipulam altura e largura. Parametros padding são respeitados normalmente. */
+
+    display: inline-block; /* faz com que os elementos fiquem na mesma linha (desde que o espaço em tela permita), e também faz com que os elementos respeitem parametros que manipulam altura e largura. */
+}
+
+/*! aula 2 - falando do inline-block */
+/** O inline-block possui um comportamento estranho que faz com que o CSS considere um caracter em branco entre dois elementos que sejam desse tipo de display, o que pode fazer com queos elementos não fiquem na mesma linha conforme esperado. */
+/*? para corrigir o cenário explicado acima, há duas opções: 
+    1- podemos encerrar a declaração do primeiro elemento e já iniciar o segundo elemento na mesma linha, sem espaço em branco no html, exemplo: </elemento1><elemento2>
+
+    2- podemos diminuir a largura definida nos elementos inline, utilizando o paramentro min-width, para o caso da largura do pai ser variável. Exemplo:
+    .elementoPai{
+        min-width: 400px;
+    }
+
+    .elementosInlineBlock{
+        display: inline-block;
+
+        min width: 198px; (largura menor do que 400 / 2, para que fiquem na mesma linha)
+    }
+*/
+/** Com as configurações acima, uma linha separando os elementos inline-block poderá ser percebida. Para resolver esse problema, seria preciso remover o espaço de declaração entre os elementos no HTML, conforme o método 1 de solução acima. */

@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-size: 40px;
+}
+
+div {
+    border: solid 5px #222;
+}
+
+.m30 {
+    margin: 30px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+/* 
+    float: left / right
+    position: absolute
+    display: inline-block
+*/
+
+/*! Anotações da aula */
+/** Nessa aula, não estamos codificando, apenas vendo o que é Margin Collapse */
+
+/*? Margin collapse é o efeito de duas margens se sobreporem, que é o efeito percebido entre os elementos mb30 e mt30 e também percebido nas margins top e bottom entre os elementos "conteudo 1" e "conteudo 2" */
+
+/* quando tenho um elemento vazio, como o percebido na linha 12 do html, ele não vai influenciar no distanciamento entre os elementos em volta dele. */
+
+/* os exemplos comentados acima (float, position: absolute e display: inline-block) fazem com que o efeito de margin collapse deixe de acontecer. */

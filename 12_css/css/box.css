@@ -1,3 +1,4 @@
+/*! Aula 1 */
 /** o box model está presente em praticamente todos os elementos do HTML, mas não em todos, porque alguns deles não são visuais. */
 
 /*? O padding é o espaço entre o conteúdo de um elemento e sua borda. */
@@ -8,3 +9,36 @@
 
 /*? A margin vai dar espaçamento entre o elemento e seus vizinhos */
 /** a logica do margin para espaçamento segue a mesma regra de valor do padding */
+
+/*! Aula 2 */
+body{
+    font-size: 80px;
+}
+
+.c1{
+    background-color: orange;
+}
+
+.c2{
+    background-color: skyblue;
+}
+
+.c3{
+    background-color: tomato;
+}
+
+div{
+    float: left; /* esse parametro faz com que os elementos fiquem alinhados em certa direção, perdendo assim a característica de elementos de bloco. */
+    
+    padding-top: 100px; /* essa config é ignorada por sequencia */
+    
+    padding: 10px 50px 100px 150px; /* top, right, bottom, left (sentido horário) */
+    
+    padding: 100px 50px; /* essa config faz com que o elemento fique com 100px de padding na vertical e 50px de padding horizontal */
+    
+    padding: 50px; /* 50px em todos os lados */
+    
+    margin: 10px 20px; /* margin vertical 10px, margin horizontal 20px em cada lado */
+
+    border: 15px solid black; /* borda preta de linha continua de 15px de ;largura */
+}
