@@ -1,0 +1,16 @@
+body {
+    font-size: 45px;
+    margin: 0;
+}
+
+/*! anotações da aula */
+div{
+    background-color: deepskyblue;
+    width: 100%;
+    height: 300px;
+    padding: 100px; /* -> esse comando faria com que ele estourasse a view */
+    border: solid 20px; /* -> esse comando faria com que ele estourasse a view */
+
+    /** para solucionar o problema causado pelo padding e pelo border acima, utilizamos o comando css "box-sizing: border-box" */
+    box-sizing: border-box; /* esse comando faz com que o tamanho do elemento esteja limitado à view (incluindo padding e border no cálculo de width total, porque o width: 100% já considera a largura total da view por si) */
+}

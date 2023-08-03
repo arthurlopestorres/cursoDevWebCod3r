@@ -1,0 +1,44 @@
+body {
+    background-color: #222;
+}
+
+.c1 {
+    background-color: red;
+}
+
+.c2 {
+    background-color: green;
+}
+
+.c3 {
+    background-color: blue;
+}
+
+.c4 {
+    background-color: orange;
+}
+
+/*! anotações da aula */
+/*? é preciso cuidado com a propriedade float, porque ele pode deixar o css mais complicado do que ele precisaria ser. O flex box nos auxiliar demais a realizar correções de tipo semelhante. */
+
+div{
+    height: 150px;
+    width: 150px;
+    float: right; /* faz com que os elementos fiquem alinhados no lado direito (invertendo a ordem dos elementos também) */
+    float: left; /* faz com que os elementos fiquem alinhados no lado esquerdo */
+}
+
+/** posso, também, colocar o float em um elemento em específico, para que ele siga uma lógica diferente dos demais (esse elemento ficará alinhado à direta, enquanto s demais estão alinhados à esquerda) */
+.c1 {
+    float: right;
+}
+
+/** para que os demais elementos não ocupem o espaço do elemento c1 acima, preciso fazer com que o próximo irmão dele desconsidere o float right. Para isso, usamos a propriedade "clear", o que faz com que este elemento e todos os demais que vêm depois dele fiquem uma linha abaixo */
+.c2{
+    clear: right;
+}
+
+/** posso utilizar o clear both para desconsiderar qualquer float (assim, o elemento assume sua própria linha, desconsiderando os demais floats de elementos anteriores a ele) */
+.c3{
+    clear: both;
+}

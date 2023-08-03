@@ -1,0 +1,22 @@
+div {
+    font-size: 40px;
+    height: 100px;
+    width: 260px;
+    border: solid 3px;
+}
+
+/*! Anotações sobre a aula */
+/*? seu eu quisesse que determinado conteudo, que está estrapolando um elemento ficasse oculto ou tratado de outra forma, eu utilizaria o overflow (overflow vai tratar de elementos que estrapolam o tamanho total de um elemento) */
+div{
+    /* para ocultar elementos usa-se overflow: hidden */
+    overflow: hidden;
+
+    /* para adicionar scrolls (nos eixos x e y) utiliza-se overflow: scroll */
+    overflow: scroll;
+
+    /* para adicionar scroll no eixo y apenas, utiliza-se overflow-y */
+    overflow-y: scroll;
+
+    /* para remover o scroll do overflow-x utiliza-se um outro paramentro, como hidden, por exemplo */
+    overflow-x: hidden;
+}

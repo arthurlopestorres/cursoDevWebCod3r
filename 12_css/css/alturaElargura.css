@@ -1,0 +1,30 @@
+body {
+    font-size: 40px;
+    background-color: coral;
+}
+
+div {
+    background-color: seagreen;
+}
+
+span {
+    background-color: dodgerblue;
+}
+
+/*! Anotações da aula */
+/* vamos começar atribuindo largura tanto para a div como para o span */
+div, span{
+    width: 50%; /* como visto anteriormente, apenas a div obedecerá a esse comando, porque o display de span é inline, por padrão. */
+
+    height: 200px;
+    
+    height: 50%; /* essa altura relativa nao foi respeitada, porque a altura do body e o body já considera, por padrão, a soma da altura dos elementos dentro dele. */
+}
+
+html{
+    height: 100%; /* o pai do html é a tela, então ela ocupará 100% da altura disponível em tela. */
+}
+
+body{
+    height: 100%; /* esse parametro nao faz diferença, porque ele acompanha, em termos relativos, a altura máxima do pai, que é o HTML. Para resolver isso, preciso colocar o html também em 100%, porque o html, por padrão tem a altura total sendo o resultado da soma da alterura dos elementos filhos + espaçamentos. */
+}
