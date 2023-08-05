@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*! Anotações da aula */
+/** vamos falar de varia propriedades e comandos relacionados a textos nesse aula. */
+
+html{
+    font-size: 20px;
+}
+
+div{
+    font-size: 50px;
+    line-height: 0.5px;
+}
+
+p{
+    margin-bottom: 20px;
+
+    /*? manipulando o tamanho da font */
+    /** unidades absolutas */
+    font-size: 16px;
+    font-size: 72pt; /* 72pt = 1 polegada(in) */
+    font-size: 1in;
+
+    /** unidades relativas */
+    font-size: 100%; /* assume 100% do valor de font size estabelecido no pai */
+    /* 1em = 100% do valor padrão da font */
+    font-size: 2em; /* assume 2x o valor o valor de font-size do elemento pai mais próximo com font-size definido, ou do navegador, se não houvewr definição. */
+    font-size: 2rem; /* assume 2x o tamanho do font-size mais distante em parentesco (html), ou do valor padrão do navegador, no caso de font-size não estar definida no HTML */
+    font-size: 10vh; /* tamanho da font em percentual em relaçao à altura do viewport */
+    font-size: 10vw; /* tamanho da font em percentual em relaçao à largura do viewport */
+
+    /*? família da font */
+    font-family: monospace; /* todas as fonts com a mesma distancia entre si */
+    font-family: Georgia, serif; /* fonts serifadas são mais desenhadinhas */
+    font-family: Verdana, sans-serif; /* fonts não serifadas são fonts mais retas, menos desenhadas */
+    font-family: 'Indie Flowerr', cursive; /* nesse caso, percebemos que a cursiva foi alicada. A separação por vírgulas estabelece alternativas, se a primeira não for encontra, passa-se para a próxima e assim por diante. */
+
+    /*? peso da fonte */
+    font-weight: 900;
+
+    /*? estilo da font  */
+    font-style: italic; /* font em itálico */
+
+    /*? transformação da font */
+    text-transform: uppercase; /* todas as letras em maiúsculo */
+    text-transform: lowercase; /* todas as letras em minúsculo */
+
+    /*? decoração de texto */
+    /* text-decoration: overline underline line-through; ->  linha em cima, sublinhado, texto riscando no meio */
+
+    /*? separação entre as palavras */
+    word-spacing: 10px;
+
+    /*? separação entre as letras */
+    letter-spacing: 5px;
+
+    /*? altura da linha */
+    line-height: 1.5em;
+
+    /*? alinhamento de texto */
+    text-align: center; /* posso centralizar, alinhar à direita ou à esquerda */
+}
+
+/*! vamos fazer com que o texto de link transforme-se em um botão em seu estilo */
+
+.botao{
+    font-size: 28px;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 25px; 
+}
+
+.destaque{
+    color: #fff;
+    background-color: tomato;
+    box-shadow: 2px 2px 1px 1px #000; /* colocando sobreado no botão */
+}
+/*? vamos fazer com que o box-shadow suma quando o botão é clicado */
+.destaque:active{
+    box-shadow: none;
+}

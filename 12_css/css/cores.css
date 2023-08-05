@@ -1,0 +1,64 @@
+/* 
+    https://www.w3schools.com/colors/colors_hsl.asp
+    
+    https://coolors.co/
+    http://paletton.com/
+*/
+
+/*? Padrão de cores hexadecimal: */
+/* dividido em 3 partes, sendo que cada parte vai de 0 até ff, exemplo: f6 78 09 -> #f67809 */
+/* primeira dupla é vermelho, segunda é verde e terceira é azul (igual RGB). F ou FF siginifica que a cor está 100% inserida em quantidade */
+/* base hexadecimal é: 0 1 2 3 4 5 6 7 8 9 a b c d e f */
+/* se eu quiser utilizar duas vezes a mesma letra 3 vezes, eu posso abreviar, 
+exemplo: #aabbcc = #abc */
+
+/* no final do hexadecimal, posso adicionar de 00 a ff também para indicar tranparencia, sendo 00 = 100% transparente e ff = 100% visível, exemplo: #rr gg bb ff -> #rgbf */
+
+/*? Padrão de cores RGB: */
+/* R: red (vai de 0 a 255) na quantidade de vermelho */
+/* G: green (vai de 0 a 255) na quantidade de verde */
+/* B: blue (vai de 0 a 255) na quantidade de azul */
+/* Exemplo: rgb(0, 255, 255) */
+
+/*? Padrão de cores RGBA: */
+/* R: red (vai de 0 a 255) na quantidade de vermelho */
+/* G: green (vai de 0 a 255) na quantidade de verde */
+/* B: blue (vai de 0 a 255) na quantidade de azul*/
+/* A: transparencia (vai de 0 a 1), assim 0.5 (ou só .5) = 50% */
+/* Exemplo: rgb(0, 255, 255, .5) */
+
+/*? Padrão de cores HSL: */
+/* H: vai de 0 a 360 e define a cor principal */
+/* S: saturação, que vai de 0 a 100 para cor mais viva ou tom de cinza (0 = cinza, 100 = cor mais vívida) */
+/* L: trata da tonalidade mais clara ou mais escura (0 = preto, 100 = branco) */
+
+/*? Padrão de cores HSLA: */
+/* H: vai de 0 a 360 e define a cor principal */
+/* S: saturação, que vai de 0 a 100 para cor mais viva ou tom de cinza (0 = cinza, 100 = cor mais vívida) */
+/* L: trata da tonalidade mais clara ou mais escura (0 = preto, 100 = branco) */
+/* A: transparencia (vai de 0 a 1), assim 0.5 (ou só .5) = 50% */
+
+/*///////////////////////////////////////////////////////////////////////////////////////////*/
+/*! Código da aula */
+
+body{
+    /*? formas de informar cor */
+
+    /* Nome literal */
+    background-color: green;
+
+    /* Hexadecimal (00 a ff, 00 a ff, 00 a ff, 00 a ff) */
+    background-color: #f67809;
+
+    /* RGB (0 a 255, 0 a 255, 0 a 255): */
+    background-color: rgb(55, 110, 220);
+
+    /* RGBA (0 a 255, 0 a 255, 0 a 255, 0 a 1): */
+    background-color: rgb(55, 110, 220, .5);
+
+    /* HSL (0 a 360, 0 a 100%, 0 a 100%): */
+    background-color: hsl(188, 50%, 50%);
+
+    /* HSLA (0 a 360, 0 a 100%, 0 a 100%, 0 a 1): */
+    background-color: hsl(188, 50%, 50%, .5);
+}
