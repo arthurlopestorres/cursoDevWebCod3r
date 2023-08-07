@@ -1,0 +1,59 @@
+/*? primeiro vamos colocar um estilo comum a todos os elementos */
+div{
+    font-size: 60px;
+    padding: 30px;
+    border: solid 5px #222;
+}
+
+/*? vamos começar manipular position: */
+.static{
+    top: 100px;
+    left: 100px;
+    /* top e left, acima, não são considerados, porque a position static não leva esses parametros em consideração */
+    background-color: steelblue;
+}
+
+.fixed{
+    position: fixed; /* position fixed faz com que o elemento fique sempre posicionado no lugar definido, indepentemente da movimentação da página (scroll no viewport) -- ele desconsidera todos os demais elementos. O espaço original também é liberado e outros elementos podem preencher o espaço. */
+    bottom: 30px;
+    right: 0px;
+    background-color: tomato;
+}
+
+.relative1{
+    position: relative; /* ele pode ser reposicionado de forma parecido com o fixed, porém, ele leva em consideração o elemento anterior e posterior (não sobrepondo-os). Quando manipulo o posicionamento do elemento no view port, sua posição inicial ficam com um espaço vazio (ele fisicamente ocupa aquele espaço, mas virtualmente é exibido em outro lugar) */
+    left: 50px;
+    top: 5px;
+    background-color: seagreen;
+}
+
+.absolute1{
+    position: absolute; /* como este absolute nao está dentro de um relemento que é position relative, ele vai levar em consideração os paramentros top, left, right e bottom para posicinar-se no viewport (sobre outros elementos, desconsiderando-os), porém sem acompanhar o scroll como faz o position fixed. */
+    left: 350px;
+    top: 120px;
+    background-color: violet;
+    color: white;
+}
+
+.relative2{
+    position: relative; /* criamos este elemento relative, para que o elemento dentro deles (absolute2) considera-se os parâmetros em relação a ele. */
+    left: 250px;
+    top: 600px;
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+}
+
+.absolute2{
+    position: absolute; /* este elemento está levando em consideração para posicionamento o elementoque está envolvendo ele. Ele apenas não respeita a altura e largura do elemento, mas está posicionado em relação a ele. */
+    background-color: slategray;
+    top: 5px;
+    left: 5px;
+}
+
+.sticky{
+    position: -webkit-sticky;  /* é preciso utilizar esse webkit para que o safari possa ler esse parametro, caso contrario, o safari nao le esse parametro */
+    position: sticky; /* essa propriedade faz com que o elemento acompanhe a rolagem da página quando o viewport chega na altura dele. */
+    background-color: #777;
+    top: 0px;
+}
