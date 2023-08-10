@@ -52,6 +52,6 @@ body {
     background: green!important;
 }
 
-.secondColumn > :nth-child(1), .secondColumn > :nth-child(2), .secondColumn > :nth-child(3), .secondColumn > :nth-child(4), .secondColumn > :nth-child(5){
+.secondColumn > :nth-child(1), .secondColumn > :nth-child(2), .secondColumn > :nth-child(3), .secondColumn > :nth-child(4), .secondColumn > :nth-child(5), .secondColumn > :nth-child(6), .secondColumn > :nth-child(7){
     background: green!important;
 }

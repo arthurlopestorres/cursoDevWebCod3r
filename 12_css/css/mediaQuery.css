@@ -1,0 +1,27 @@
+div {
+    font-size: 40px;
+    margin: 20px;
+    padding: 20px;
+    background-color: coral;
+    border: solid 5px;
+    display: none;
+}
+
+/*! media query vai servir para trabalharmos com responsividade */
+
+/** Para começar definindo uma media query, vou começar utilizando o @media (parametro que define a media query) */
+
+/* vamos colocar com condição uma largura máxima de 600px */
+@media(max-width: 600px){
+    .muito-pequeno{ display: block; }
+}
+
+/* vamos definir que a largura máxima tem que ser 1000px ou se a orientação do viewport for portrait(retrato). Uma outra opção de orientação seria landscape(paisagem) */
+@media(max-width: 1000px), (orientation: portrait){
+    .pequeno-retrato{ display: block; }
+}
+
+/* definindo largura minima de 500px e maximad e 1000px */
+@media(min-width: 500px) and (max-width: 1000px){
+    .intervalo{ display: block; }
+}
