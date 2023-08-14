@@ -1,0 +1,54 @@
+div{
+    font-size: 40px;
+}
+
+
+
+.flex-container{
+    display: flex;
+    height: 300px;
+    width: 600px;
+}
+
+.flex-container div:nth-child(3){ /* selecionando terceiro filho que seja uma div */
+
+    background-color: indianred;
+
+    /*? vamos alterar a ordenação com que este elemento é exibido dentro do flex-box em relação aos demais flex-items do mesmo nível: */
+    order: 1; /* quando ele passa a ter a ordem maior dessa forma, ele passa a ser o ultimo elemento exibido na ordenação (quanto maior a ordem, mais ele tende a ser o ultimo a ser exibido) */
+    order: 0; /*quando a order é 0, ele é exibido na ordenação do HMTL*/
+    order: -1; /* a ordenação também pode ser negativa */
+
+    /*? vamos trabalhar no alinhamento de um elemento individualmente no flex box */
+    align-self: center; /* centralizado o cross axis */
+    align-self: flex-end; /*flex-end ou flex-start em relação ao cross axis*/
+    align-self: stretch; /* esse é o default */
+}
+
+.flex-container div{
+    box-sizing: border-box;
+    width: 100px;
+
+    /*? posso fazer com que os flex-items ocupem 100% do espaço disponível dentro da flex-box. Para isso, utilizo a propriedade flex-grow. */
+    /** O flex-grow utiliza de uma lógica para funcionar corretamente. Vamos supor que o espaço vazio seja de 200px e eu tenho 4 flex-items. Se eu atribuir o valor 1 para todos os flex-items, ele somará a pontuação flex-grow de todos os items e dividirá 200px por eles para saber quanto cada um tem que crescer. Nesse caso, 50px. */
+    /** Caso eu defina um peso maio para um dos elementos, como flex-grow 2, da mesma forma a soma de todos os elementos vai acontecer e ser dividido pelo resultado da soma. A diferença é que o elemento com peso maior vai crescer proporcionalmente mais. */
+    /** flex grow 0 faz com que um elemento não cresça */
+    flex-grow: 0; /* ninguém cresce */
+    flex-grow: 1; /* todos crescem igualmente para ocupart 100% do espaço */
+
+}
+
+.flex-container div:nth-child(1){
+    flex-grow: 2; /* apenas o primeiro elemento declarado no html terá peso 2 */
+}
+
+/*? além do flex-grow, visto acima, quando o container é menor do que a soma das larguras das tags, podemos utilizar o flex-shrink  para encolher proporcionalmente os elementos */
+
+.flex-container{
+    width: 300px;
+    flex-shrink: 1; /* todos encolhem igualmente para ocupart 100% do espaço */
+} 
+
+.flex-container div:nth-child(1){
+    flex-shrink: 5; /* atribuindo um peso maior de encolhimento para o primeiro elemento declarado no HTML */
+}

@@ -1,0 +1,73 @@
+/*! Aula 1 (introduçào) - Nomenclatura do Flex Box */
+/*? o flex box inicia marcarndo um determinado container como "display: flex;" */
+/*? os elementos dentro de uma flex box são chamados de "flex items" */
+
+/*? tempos dois eixos no flex box: x e y. Quando o eixo x está selencionado como principal (main axis), o eixo y é tratado como o secundário e fica chamado de "cross axis". Já quando o eixo y está selecionado como principal,  o inverso é válido. */
+
+/*? O main axis e o cross axis têm dois pontos de posição definidos (começo e fim). Assim, podemos ter: */
+/* 
+ main start
+ main end
+ cross start
+ cross end
+*/
+
+/*? tanto o main quanto o cross axis possuem característica de tamanho:  */
+/* 
+main size
+cross size
+*/
+
+/*! Aula 2 (introdução) - Flex Box 1 */
+div{
+    width: 60px;
+    margin: 4px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.big{
+    font-size: 1.5em;
+}
+
+.flex-container{
+    display: flex; /* definindo este container como uma flex box. Percebemos que os elementos ficaram na mesma linha, porque o main axis, por padrão, é o eixo x */
+    /*? mundando o axis do flex box utilizando "flex-direction" (que pode ser "row" ou "column") */
+    /* flex-direction: column; */
+
+    /*? colocando os elementos em coluna na sequencia contraria ao definido no html com flex-direction (pode ser 'column-reverse' ou 'row-reverse'). O Flow reverse também muda o alinhamento para a direita (parecido com float: right) */
+    /* flex-direction: column-reverse;
+    flex-direction: row-reverse; */
+
+    /** colocando largura para menor do que os elementos (eles não quebram de linha por padrão) */
+    height: 400px;
+    width: 400px;
+    /*? para que os elementos flex quebrem de linha, utilizamos 'flex-wrap: wrap' (pode ser 'nowrap', caso nao deva quebrar linha)  */
+    /* flex-wrap: wrap; */
+    /** posso colocar o flex-wrap também como 'wrap-reverse', para inverter as linhas */
+    /* flex-wrap: wrap-reverse; */
+
+    /*? há um comando que me permite misturar os paramentros de flex-firection e flex-wrap, que se chama "flex-flow" */
+    flex-flow: row wrap;
+    flex-flow: column-reverse wrap; /* ele passará a ser coluna ao contrário */
+    flex-flow: row wrap;
+
+    /*? entendendo do justify-content, para justificar o conteúdo */
+    justify-content: flex-start; /* início do main axis */
+    justify-content: flex-end; /* fim do main axis */
+    justify-content: center; /* centraliza os itens */
+    justify-content: space-around; /* define o mesmo espaçamento entre todos os flex-items */
+    justify-content: space-between; /* coloca o maior espaçamento possível entre os flex-items */
+
+    /*? podemos ajustar o alinhamento dos items também no cross axis. para isso, utilizamos o parametro align-items */
+    align-items: stretch; /* por padrão, ele faz com que os elementos se estiquem para ocupar todo o espaço */
+    align-items: baseline; /* vai fazer com que o alinhamento dos elementos fique relacionada à base do conteúdo, de forma que, todos os números dentro de cada div teriam suas bases alinhadas (isso também altera a altura visual dos flex-items) */
+    align-items: flex-start; /* alinha pelo inicio do flex box no cross axis */
+    align-items: flex-end; /* alinha pelo final do flex box no cross axis */
+    align-items: center; /* alinha pelo centro do flex box no cross axis */
+
+    /*? align content é utilizado para lidar com mais de uma linha no main axis */
+    align-content: flex-start; /* todas as linhas vao para o inicio do flex-box, no cross axis */
+    align-content: flex-end; /* todas as linhas vao para o fim do flex-box, no cross axis */
+    /* as propriedades center, space-between, space-around, entre outras também estão disponíveis. */
+}

@@ -1,0 +1,17 @@
+.flex-container{
+    display: flex;
+}
+
+.flex-container div{
+    font-size: 40px;
+    flex-basis: 100px; /* flex-basis é a propriedade do flex-box para definir a largura dos elementos dentro do flex-box, assim, todos estão com 100px. Obs.: se o flex-direction for row, altera-se a largura. Se for for column, altera-se a altura. */
+
+    /** se eu utilizar o flex-basis e declarar uma alteração de largura ou de altura (width ou height), não fará diferença, porque o flex-basis é mais específico. OBs.: se a largura não estiver no main axis, entao sim ela será aplicada da forma declarada abaixo (no caso se o flex-direction for column) */
+    width: 200px; /* não se aplica */
+}
+
+/*? vamos verificar um pouco sobre propriedades shortcut */
+.flex-container div:nth-child(4){
+    /*? vamos utilizar a propriedade flex, que nela a gente pode definir o grow shrink e basis (nessa orden)*/
+    flex: 3 6 100px; /*se grow: 3, se shrink: 6 e se nenhum dos dois: 100px*/
+}
