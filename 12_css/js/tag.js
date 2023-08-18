@@ -5,7 +5,11 @@ const colorsObj = {
     p: 'orange',
     ul: 'yellow',
     ol: 'pink',
-    form: 'aquamarine'
+    form: 'aquamarine',
+    main: 'blue',
+    header: 'red',
+    footer: 'green',
+    nav: 'orange'
 }
 
 const elements = Array.from(document.querySelectorAll('.tag'));
@@ -18,7 +22,8 @@ elements.forEach(element => {
         const tag = document.createElement('span');
         tag.textContent = tagName
         tag.classList.add('elementTag')
-        tag.style.color = colorsObj[tagName]
+        tag.style.backgroundColor = colorsObj[tagName]
+        tag.style.color = '#fff'
         
         element.insertAdjacentElement('afterbegin', tag);
     }

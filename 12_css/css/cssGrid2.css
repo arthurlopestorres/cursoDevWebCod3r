@@ -20,3 +20,24 @@ Para solucionar isso, basta, em vez de utilizar grid-column-gap, usar column-gap
 
 Bons estudos. */
 
+body{
+    display: grid;
+    /*? podemos nomear as linhas entre colunas da seguinte forma: */
+    grid-template-columns: [inicio] 1fr [metade-1 meio-1] 1fr [metade-2 meio-2] 1fr [fim]; /* 'metade-1 meio-1', nesse caso, são dois nomes alternativos para a mesma linha */
+    grid-template-rows: repeat(3, 1fr);
+
+    /*? vamos aplicar gaps */
+    column-gap: 20px; /*espaçamento (margin) entre colunas*/
+    row-gap: 20px; /*espaçamento (margin) entre linhas*/
+    gap: 50px 10px; /*50px de gap nas linhas e 10px nas colunas*/
+}
+
+.d1{
+    grid-column-start: metade-2; /*estou referencunado a linha nomeada no pai (grid) onde este elemento está*/
+    grid-column-end: fim;
+    grid-column: meio-1 / fim; /*estou usando grid-column para especificar tanto o inicio quanto o fim*/
+    grid-row: 1 / span 2;
+
+    /*? podemos utilizar a propriedade grid-area para definir os termos da seguinte forme (row-start column-start row-end column-end) */
+    grid-area: 1 / meio-1 / span 3 / fim;
+}

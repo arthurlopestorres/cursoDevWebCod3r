@@ -57,35 +57,32 @@ body{
     Lembrando, que na linha 48 foram definidas 3 colunas. Como há 12 elementos, serão 3 colunas de 4 linhas. */
 
     grid-template-rows: 100px auto auto auto; /* defini 100px para a primeira linha e as restantes (auto) vão dividir o espaço de forma igualitaria. */
-    }
-    /*///////////////////////////////////////////////////////////////////////////*/
-    /*? quando utilizamos grid, as linhas de divisão são identificadas de forma numerada (começando de 1 para o infinito positivo, se for de cima para baixo ou da esquerda para a direita) ou (começando de -1 para o infinito negativo, se for de baixo para cima ou da direita para a esquerda) */
+}
+/*///////////////////////////////////////////////////////////////////////////*/
+/*? quando utilizamos grid, as linhas de divisão são identificadas de forma numerada (começando de 1 para o infinito positivo, se for de cima para baixo ou da esquerda para a direita) ou (começando de -1 para o infinito negativo, se for de baixo para cima ou da direita para a esquerda) */
 
-    /*///////////////////////////////////////////////////////////////////////////*/
-    /*? vamos mexer especificamento no elemento de classe d8  */
-    .d8 {
-        grid-column-start: 2; /* faço com que a linha de coluna de inicio desse elemento seja a 2 */
-        grid-column-end: 4; /* faço com que a linha de coluna de fim desse elemento seja a 4 */
+/*///////////////////////////////////////////////////////////////////////////*/
+/*? vamos mexer especificamento no elemento de classe d8  */
+.d8 {
+    grid-column-start: 2; /* faço com que a linha de coluna de inicio desse elemento seja a 2 */
+    grid-column-end: 4; /* faço com que a linha de coluna de fim desse elemento seja a 4 */
+    /** posso fazer com que a coluna de fim seja automaticamente duas linhas par a direita usando "span", exemplo: */
+    grid-column-end: span 2;
+    /** vamos manipular o inicio e fim da linha  */
+    grid-row-start: 3; /* elemento inicia na linha 3 */
+    grid-row-end: span 2; /* elemento ocupa duas linhas, encerrando 1 linha abaixo do que o normal (linha final padrão: 4, com span 2, passa a terminar na linha 5) */
+}
+/*! É possível que células sobreponham-se entre si. Vamos ver esse efeito na manipulação de código abaixo: */
+.d10, .d11{
+    /* podem sobrepor-se entre si */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /** se eu manipular linhas, colocando o mesmo parametro, elas vao se sobrepor */
+    grid-row-start: 5; /*? isso já é suficinete para que o 11 fique acima do 10, porque ambas estão começando na mesma linha e mesma coluna. */
+}
 
-        /** posso fazer com que a coluna de fim seja automaticamente duas linhas par a direita usando "span", exemplo: */
-        grid-column-end: span 2;
-
-        /** vamos manipular o inicio e fim da linha  */
-        grid-row-start: 3; /* elemento inicia na linha 3 */
-        grid-row-end: span 2; /* elemento ocupa duas linhas, encerrando 1 linha abaixo do que o normal (linha final padrão: 4, com span 2, passa a terminar na linha 5) */
-    }
-
-    /*! É possível que células sobreponham-se entre si. Vamos ver esse efeito na manipulação de código abaixo: */
-    .d10, .d11{
-        /* podem sobrepor-se entre si */
-        grid-column-start: 1;
-        grid-column-end: 3;
-        /** se eu manipular linhas, colocando o mesmo parametro, elas vao se sobrepor */
-        grid-row-start: 5; /*? isso já é suficinete para que o 11 fique acima do 10, porque ambas estão começando na mesma linha e mesma coluna. */
-    }
-
-    /*///////////////////////////////////////////////////////////////////////////*/
-    /*! Propriedade z-index (define-se a profundidade dos elementos na página, "quem fica na frente de quem") */
-    .d10{
-        z-index: 1; /*? o z-index padrão é null. Ao atribuir 1 (ou memos zero), o elemento já sobrepos o elemento 11, que permanece com z-index null */
-    }
+/*///////////////////////////////////////////////////////////////////////////*/
+/*! Propriedade z-index (define-se a profundidade dos elementos na página, "quem fica na frente de quem") */
+.d10{
+    z-index: 1; /*? o z-index padrão é null. Ao atribuir 1 (ou memos zero), o elemento já sobrepos o elemento 11, que permanece com z-index null */
+}

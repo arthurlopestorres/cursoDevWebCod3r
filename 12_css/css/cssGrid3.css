@@ -1,0 +1,49 @@
+/*? vamos primeiro remover padding e margin */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    grid-area: cabecalho;
+}
+
+nav{
+    grid-area: navegacao;
+}
+
+main{
+    grid-area: conteudo;
+}
+
+footer{
+    grid-area: rodape;
+}
+
+/*? Percebe-se, abaixo, que ao colocar o "display: grid" no body, bgunça-se todo o layout. Isso acontece, porque os parametros de grid-atra acima serão utilizados para a organização do template, mas ainda não estão configurados. */
+
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    
+    /*? é usando a propriedade abaixo que a gente vai definir como os elementos criados entre as linhas 7 e 21 serão organizados na tela. */
+    /* nessa propriedade, devemos escrever um paramentro para cada linha, sendo que, em cada linha, precisamos definir o conteudo exibido em cada coluna (temos 2 colunas e 3 linhas, assim teremos 2 termos por parametro e 3 paramentros): */
+    grid-template-areas: 
+    'cabecalho cabecalho'
+    'navegacao conteudo'
+    'rodape rodape';
+}
+
+@media (max-width: 700px){
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 80px 1fr 80px;
+        grid-template-areas: 
+        'cabecalho'
+        'navegacao'
+        'conteudo'
+        'rodape';
+    }
+}
