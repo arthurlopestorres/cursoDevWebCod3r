@@ -1,0 +1,91 @@
+/* https://caniuse.com/#feat=css-grid */
+        
+html,
+body {
+    margin: 20px;
+    height: calc(100% - 40px);
+    background-color: lightgray;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border: solid 5px dodgerblue;
+    background: #fff;
+}
+
+/*! Anotações da aula */
+/*? vamos aplicar o css grid no body */
+body{
+    display: grid; /* no css grid não há main axis e cross axis (ambos são controlados ao mesmo tempo) */
+
+
+    /*? controlando as colunas do grid css: */
+    grid-template-columns: 50% 50%; /** Essa propriedade nos ajuda a definir qual vai ser a organização das colunas no CSS Grid. Colocando dois percentuais, dessa forma, definimos que precisam haver duas colunas com 50% da largura cada */
+
+    /*///////////////////////////////////////////////////////////////////////////*/
+    /*? quando temos dois valores iguais, como no caso acima (50% 50%), podemos utilizar uma funçao no css chamada "repeat": */
+
+    /** eu poderia ter apenas duas colunas: */
+    grid-template-columns: repeat(2, 50%); /*2 grupos que ocupam 50% cada, gerando duas colunas que dividem a largura meio a meio*/
+
+    grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /** Dentro da função repeat, multiplica-se o valor antes da virgula pela quantidade de termos depois da virgula, levando em consideração, em percentual, a medida para cada grupo. (4 x 3) -> nesse exemplo, teremos 3 grupos de colunas, com 4 colunas em cada grupo, sendo que, cada uma das 4 colunas, ocupará 8.33% do espaço. */
+
+    grid-template-columns: repeat(4, 8.33%); /** nesse caso, tenho 4 grupos com uma coluna em cada, sendo que, cada coluna ocupa 8.33% do espaço */
+
+    /** É possível agrupar o repeat com outros valores, de forma que, utilizamos o repeat para controlar uma parte das colunas e um valor fora, para controlar um coluna restante */
+    grid-template-columns: repeat(11, 100px) 100px; /* )11 grupos com 100px em cada coluna única) 100px na coluna restante */
+
+    /*///////////////////////////////////////////////////////////////////////////*/
+    /*? Uma das funções que posso utilizar no css, para tornar a largura da coluna variável num intervalo, por exemplo, seria utilizando a função " grid-template-columns: minmax(100px, 300px);", por exemplo. */
+
+    /*///////////////////////////////////////////////////////////////////////////*/
+    /*? Falando da unidade de fragmento (fr) */
+    grid-template-columns: 200px 20% 1fr; /** (200px, 20%, 1 fragmento) -> primeira coluna medindo 200px, a segunda coluna ocupando 20% e a terceira coluna pega 100% do que sobrou de espaço. */
+
+    grid-template-columns: 3fr 6fr 3fr; /** Estamos criando aqui 3 colunas: a primeira ocupa 3/12 da largura, a segunda ocupa 6/12 da largura e a terceira ocupa 3/12 da largura, sendo que a base 12 é a soma de todos os fragmentos. */
+    
+    /*///////////////////////////////////////////////////////////////////////////*/
+    /*? vamos manipular agora as linhas do grid css */
+    /** vamos definir 4 linhas, de forma que: a primeira ocupará 50% do espaço, a segunda 25%, a terceira 12,5% e quarta 12,5% */
+    grid-template-rows: 50% 25% 12.5% 12.5%;
+
+    /** usando fragmentos */
+    grid-template-rows: 100px 1fr; /* basicamente, a primeira linha terá 100px, a segunda ocupará todo o espaço que puder, e as demais linhas ocuparão igualmente o espaço que restar. 
+    Lembrando, que na linha 48 foram definidas 3 colunas. Como há 12 elementos, serão 3 colunas de 4 linhas. */
+
+    grid-template-rows: 100px auto auto auto; /* defini 100px para a primeira linha e as restantes (auto) vão dividir o espaço de forma igualitaria. */
+    }
+    /*///////////////////////////////////////////////////////////////////////////*/
+    /*? quando utilizamos grid, as linhas de divisão são identificadas de forma numerada (começando de 1 para o infinito positivo, se for de cima para baixo ou da esquerda para a direita) ou (começando de -1 para o infinito negativo, se for de baixo para cima ou da direita para a esquerda) */
+
+    /*///////////////////////////////////////////////////////////////////////////*/
+    /*? vamos mexer especificamento no elemento de classe d8  */
+    .d8 {
+        grid-column-start: 2; /* faço com que a linha de coluna de inicio desse elemento seja a 2 */
+        grid-column-end: 4; /* faço com que a linha de coluna de fim desse elemento seja a 4 */
+
+        /** posso fazer com que a coluna de fim seja automaticamente duas linhas par a direita usando "span", exemplo: */
+        grid-column-end: span 2;
+
+        /** vamos manipular o inicio e fim da linha  */
+        grid-row-start: 3; /* elemento inicia na linha 3 */
+        grid-row-end: span 2; /* elemento ocupa duas linhas, encerrando 1 linha abaixo do que o normal (linha final padrão: 4, com span 2, passa a terminar na linha 5) */
+    }
+
+    /*! É possível que células sobreponham-se entre si. Vamos ver esse efeito na manipulação de código abaixo: */
+    .d10, .d11{
+        /* podem sobrepor-se entre si */
+        grid-column-start: 1;
+        grid-column-end: 3;
+        /** se eu manipular linhas, colocando o mesmo parametro, elas vao se sobrepor */
+        grid-row-start: 5; /*? isso já é suficinete para que o 11 fique acima do 10, porque ambas estão começando na mesma linha e mesma coluna. */
+    }
+
+    /*///////////////////////////////////////////////////////////////////////////*/
+    /*! Propriedade z-index (define-se a profundidade dos elementos na página, "quem fica na frente de quem") */
+    .d10{
+        z-index: 1; /*? o z-index padrão é null. Ao atribuir 1 (ou memos zero), o elemento já sobrepos o elemento 11, que permanece com z-index null */
+    }

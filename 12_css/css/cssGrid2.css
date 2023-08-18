@@ -1,0 +1,22 @@
+html, body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border: solid 5px dodgerblue;
+    background: #fff;
+}
+
+/*! Comentário antes desta aula: */
+/*todos -> Fala pessoal! Na aula a seguir, algumas propriedades CSS serão utilizadas, incluindo essas três: gridcolumn-gap (nova: column-gap), grid-row-gap (nova: row-gap) ou grid-gap (nova: gap).
+Recentemente, no entanto, o uso delas se tornou obsoleto, o que pode gerar o aviso Property is obsolete. Avoid using it (propriedade obsoleta. Evite usá-la).
+Para solucionar isso, basta, em vez de utilizar grid-column-gap, usar column-gap. E, em vez de grid-row-gap, usar row-gap. E, em vez de grid-gap, usar gap. Em outras palavras, basta remover o prefixo grid- que funcionarão como esperado.
+
+Bons estudos. */
+

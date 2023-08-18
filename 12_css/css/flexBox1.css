@@ -52,7 +52,7 @@ div{
     flex-flow: column-reverse wrap; /* ele passará a ser coluna ao contrário */
     flex-flow: row wrap;
 
-    /*? entendendo do justify-content, para justificar o conteúdo */
+    /*? entendendo do justify-content, para justificar o conteúdo no main axis */
     justify-content: flex-start; /* início do main axis */
     justify-content: flex-end; /* fim do main axis */
     justify-content: center; /* centraliza os itens */
