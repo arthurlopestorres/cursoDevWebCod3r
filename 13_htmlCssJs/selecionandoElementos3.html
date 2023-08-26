@@ -18,21 +18,26 @@
             font-size: 1.6em;
         }
     </style>
+    <script defer src="./js/selecionandoElementos3.js"></script>
 </head>
 
 <body class="conteudo exercicio">
     <h1>Formulário</h1>
+
+    <!--! é necessário que cada campo de input do formulário tenha um name -->
+    
     <form name="pesquisa" action="http://www.google.com.br/search">
+    <!--? quando utilizo o name do input de texto como 'q' estou inserindo a query no search do google automaticamente (parametro nativo do google) -->
         <input type="text" name="q" placeholder="Digite o termo...">
+    
+        <!--? quando utilizo 'hl' no name do select, o value da opção selecionada estará sendo adicionada como host language no search -->
         <select name="hl">
             <option value="pt-br">Português (Brasil)</option>
             <option value="en-us">Inglês (Americano)</option>
+
         </select>
         <button>Pesquisar</button>
     </form>
-    <script>
-        // ...
-    </script>
 </body>
 
 </html>
