@@ -36,3 +36,7 @@ body {
 [done]{
     background-color: green;
 }
+
+[inProgress]{
+    background-color: yellow;
+}
