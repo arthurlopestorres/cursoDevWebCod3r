@@ -16,9 +16,8 @@ dropZones.forEach(dropzone => {
         e.preventDefault()     // foi necessário esse prevent default, para que consigamos manipularo evento de drop posteriormente.
     })
     dropzone.addEventListener('drop', e => {
-        const id = e.dataTransfer.getData('item-id')
-        const item = document.getElementById(id)
+        const item = document.getElementById(e.dataTransfer.getData('item-id')) //? pegando o item id que foi definido com setData anteriormente, ao iniciar o arrasto do elemento (dragStart)
 
-        dropzone.appendChild(item) //! por conta de estar referenciando o elemento pelo ID (e cada elemento é único em seu id), fazer append faz com que o elemento seja movido.
+        dropzone.appendChild(item) //? por conta de estar referenciando o elemento pelo ID (e cada elemento é único em seu id), fazer append faz com que o elemento seja movido.
     })
 })
