@@ -11,7 +11,6 @@ HTMLElement.prototype.log = log
 NodeList.prototype.log = log
 Node.prototype.log = log
 
-
 //? selecionando o pai de um elemento
 const lista = document.querySelector('div ul') //elemento selecionado: UL que está dentro de uma div
 lista.parentNode.log() //elemento selecionado: pai da ul que havia sido selecionada (parentNode)

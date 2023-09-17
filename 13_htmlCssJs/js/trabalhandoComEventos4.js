@@ -26,6 +26,6 @@ submitButton.addEventListener('click', e => {
 
      // retorna arrays com o valor do campo name na primeira posição e o value do elemento na segunda posição:
      for(let dado of formData){
-        console.log(dado) 
+      console.log(dado)
      }
 })

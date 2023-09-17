@@ -12,11 +12,11 @@ console.log('hasAttribute', lista.hasAttribute('feira')) //false
 //? posso criar um atribut ou alterar um atributo passando a função setAttribute('atributo', 'valor')
 //* trocando o atributo destino (já existente):
 lista.setAttribute('destino', 'empresa')
-console.log(`getAttributeNode('destino'):`, lista.getAttributeNode('destino'))
+console.log(`getAttributeNode('destino'):`, lista.getAttributeNode('destino')) //destino = 'empresa'
 
 //* inserindo o atributo status=aberto
 lista.setAttribute('status', 'aberto')
-console.log(`lista.getAttributeNode('status')`, lista.getAttributeNode('status'))
+console.log(`lista.getAttributeNode('status')`, lista.getAttributeNode('status')) //status = 'aberto'
 
 //? removendo atributo
 lista.removeAttribute('destino')
@@ -32,3 +32,4 @@ const label = document.querySelector('label')
 console.log(label.for) //undefined
 console.log(label.htmlFor) //Funciona!
 console.log(label.getAttribute('for')) //Funciona igual!
+console.log(label.getAttributeNode('for')) //retornar o nó do atibuto for

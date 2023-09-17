@@ -6,7 +6,9 @@ item.style.cursor = 'move' //? cursor: move; -> parametro css para fazer com que
 
 item.addEventListener('mousemove', (e) => {
     if(e.buttons){ //? o evento tem a propriedade "buttons", que, quando o mouse está clicado, fica diferente de zero, resutando em 'true' 
-        e.target.style.top = `${e.clientY - (item.clientHeight / 2)}px` //?seleciona-se o (eixo y - altura do elemento) /2 -> a divisão por 2 é porque queremos que o cursor fique bem no meio do elemento.
-        e.target.style.left = `${e.clientX - (item.clientWidth / 2)}px`
+        let eixoY = e.clientY - (item.clientHeight / 2)
+        let eixoX = e.clientX - (item.clientWidth / 2)
+        e.target.style.top = `${eixoY}px` //?seleciona-se o (eixo y - altura do elemento) /2 -> a divisão por 2 é porque queremos que o cursor fique bem no meio do elemento.
+        e.target.style.left = `${eixoX}px`
     }
 })
