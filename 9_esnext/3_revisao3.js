@@ -14,10 +14,11 @@ const pessoa = {
 console.log(pessoa.nome, pessoa.ola()) //Carla Olá gente! e Carla
 
 // Foi adicionada a Class ao JS
-class Animal {}
-class Cachorro extends Animal{ //extends faz herança por aqui com anima
+class Animal {
     falar(){
         return 'au au!'
     }
+}
+class Cachorro extends Animal{ //extends faz herança por aqui com animal
 }
 console.log(new Cachorro().falar()) //au au!
