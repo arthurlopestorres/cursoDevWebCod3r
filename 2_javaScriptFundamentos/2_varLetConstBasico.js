@@ -8,6 +8,8 @@ var a = 5 //esse identificador foi criado anteriormente como "var", mas posso us
 b = 10
 console.log(a, b);
 
-//const não nos permite alterar o valor que um identificador recebe de forma nenhum. Ele sempre irá receber um mesmo valor, que é o definido quando ele foi criado
+//const não nos permite alterar o valor que um identificador recebe de forma nenhuma. Ele sempre irá receber um mesmo valor, que é o definido quando ele foi criado
 const nomeArthur = 'Arthur Lopes Torres'
+console.log(nomeArthur);
+//! nomeArthur = 'Maria Izabelle' esta linha geraria um erro, porque estou tentando atribuir um novo valor para um identificador constante.
 console.log(nomeArthur);
