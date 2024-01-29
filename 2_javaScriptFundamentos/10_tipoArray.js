@@ -14,7 +14,7 @@ console.log(valores[0], valores[3])
 
 //se eu tentar acessar um index não existente do array, o código me retornará "undefined":
 console.log(valores[4])
-//como o index 4 não existe no array, posso então inserilo, atribuindo como se fosse um indicador:
+//como o index 4 não existe no array, posso então inseri-lo, atribuindo como se fosse um indicador:
 valores[4] = 10
 console.log(valores[4])
 

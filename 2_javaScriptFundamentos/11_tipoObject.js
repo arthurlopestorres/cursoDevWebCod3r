@@ -16,7 +16,7 @@ prod1.categoriaId = 22
 
 console.log(prod1)
 
-//posso criar identificador e valor diretamente dentro de um objeto, utilizando anotação direta:
+//posso criar identificador e valor diretamente dentro de um objeto, utilizando notação direta:
 const prod2 = {
     nome: 'Celular Menos Mega',
     codRef: '654646',
