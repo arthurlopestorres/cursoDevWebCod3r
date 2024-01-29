@@ -59,7 +59,7 @@ div, span, li{
     .elementosInlineBlock{
         display: inline-block;
 
-        min width: 198px; (largura menor do que 400 / 2, para que fiquem na mesma linha)
+        min-width: 198px; (largura menor do que 400 / 2, para que fiquem na mesma linha)
     }
 */
 /** Com as configurações acima, uma linha separando os elementos inline-block poderá ser percebida. Para resolver esse problema, seria preciso remover o espaço de declaração entre os elementos no HTML, conforme o método 1 de solução acima. */

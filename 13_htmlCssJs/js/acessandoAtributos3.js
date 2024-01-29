@@ -9,4 +9,4 @@ console.log(lista.attributes['data-urgencia']) //data-urgencia=5
 
 //! exemplo que nao funciona alterar
 lista.attributes.destino = 'casa' //não fez a alteração no HTML
-console.log(lista.attributes.destino)//escritorio
+console.log(lista.attributes.destino) //escritorio
