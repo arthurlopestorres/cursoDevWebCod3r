@@ -1,7 +1,7 @@
 function soma(){ //por mais que essa função não receba parametros, isso nao significa que eu não possa passar parametros para ela. Posso recuperar parametros passados posteriormente a partir de uma propriedade chamada arguments, que é um array vazio que recebe parametros passados para a função.
     let soma = 0
-    for (i in arguments){
-        soma += arguments[i]
+    for (let i of arguments){ //? introduzindo o for of aqui, que é uma opção melhor - (30/01/2024)
+        soma += i
     }
     return soma
 }

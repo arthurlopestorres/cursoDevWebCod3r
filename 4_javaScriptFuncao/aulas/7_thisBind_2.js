@@ -1,11 +1,12 @@
 function Pessoa(){
     this.idade = 0
 
-    //a função set interval dispara uma outra função após um tempo passado para setInterval em milissegundos (em loop, ou seja, essa função vai ficar sendo disparada infinitamente a adac x milissegundos que forem indicados a ela.)
-    setInterval(function(){
+    //a função set interval dispara uma outra função após um tempo passado para setInterval em milissegundos (em loop, ou seja, essa função vai ficar sendo disparada infinitamente a cada x milissegundos que forem indicados a ela.)
+    const aumentaAidade = () => {
         this.idade++
         console.log(`Pessoa 1 = ${this.idade}`)
-    }, 1000)
+    }
+    setInterval(aumentaAidade, 1000)
 }
 new Pessoa //nesse caso, this.idade irá retornar NaN, que quem está acionando esta função é o temporizador que setInterval acima, e não a função Pessoa, que é um objeto também nesse caso.
 
@@ -13,10 +14,11 @@ function Pessoa2(){
     this.idade = 0
 
     //a função set interval dispara uma outra função após um tempo passado para setInterval em milissegundos (em loop, ou seja, essa função vai ficar sendo disparada infinitamente a cada x milissegundos que forem indicados a ela.)
-    setInterval(function(){
+    const aumentaAidade = () => {
         this.idade++
-        console.log(`Pessoa 2 = ${this.idade}`)
-    }.bind(this), 1000)
+        console.log(`Pessoa 1 = ${this.idade}`)
+    }
+    setInterval(aumentaAidade.bind(this), 1000)
 }
 new Pessoa2 //nesse caso, retornará a contagem corretamente, pois foi adicionado .bind(this) em setInterval, que está no contexto de Pesso2, então this vai apontar para o objeto pessoa, que por sua vez, possui 'idade' como um indicador.
 

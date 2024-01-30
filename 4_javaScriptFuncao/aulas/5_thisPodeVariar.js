@@ -8,7 +8,7 @@ const funcaoQueFazLog = function(){
     bodyDaPagina.style = 'background-color: blue!important' //aqui, estou mudando a cor de fundo do body
 }
 
-bodyDaPagina.onclick = funcaoQueFazLog //nesse caso, a gente nao chama () para invocar a função, porque quem fará isso é o .onclick no body da página.
+bodyDaPagina.addEventListener('click', funcaoQueFazLog)  //nesse caso, a gente nao chama () para invocar a função, porque quem fará isso é o .onclick no body da página.
 
 //----------------------//----------------------//----------------------//----------------------//----------------------//----------------------
 
@@ -18,9 +18,8 @@ bodyDaPagina.onclick = funcaoQueFazLog //nesse caso, a gente nao chama () para i
 //no browser, por exemplo, caso eu esteja no contexto global, this === window (que é o objeto global no browser)
 //caso o this seja chamado ao clicarmos na pagina, como no exemplo acima (console.log), this já não será equivalente a window.
 //quando clicamos na página, por exemplo, pode-se dizer que o this === ao elemento em se está clicando, exemplo:
-const bodyDaPagina = document.getElementsByTagName('body')[0]
 const funcaoQueFazLog2 = function(){
-    console.log(this === bodyDaPagina ) 
+    console.log(this === bodyDaPagina ) //? true
 }
 bodyDaPagina.onclick = funcaoQueFazLog2 // o retorno é true para this === bodyDaPagina
 
