@@ -22,7 +22,7 @@ const imprimirResultado = function(nota){
         console.log('quadro de honra')
     } else if (nota.entre(7, 8.99)) {
         console.log('aprovado')
-    } else if (nota.entre(6, 7,99)){
+    } else if (nota.entre(6, 7.99)){
         console.log('muito bom!')
     }
 }

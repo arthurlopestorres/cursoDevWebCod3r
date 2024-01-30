@@ -6,7 +6,7 @@ function getInteiroAleatorioEntre(min, max){
 
 let opcao = 0 // se eu utilizasse -1 aqui de inicio, ele nem entraria no while, porque o valor já torna negativa a condição do while, antes mesmo do loop ser iniciado.
 
-while (opcao != -1){ //no caso do while, o retorno da condição tambem é true or false, assim como no if. Quando o retorno for false, o loop se encerra.
+while (opcao != -1){ o//no caso d while, o retorno da condição tambem é true or false, assim como no if. Quando o retorno for false, o loop se encerra.
     opcao = getInteiroAleatorioEntre(-1, 10)
     console.log(`A opção escolhida foi ${opcao}`)
 }

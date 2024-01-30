@@ -6,14 +6,14 @@ console.log('01)', '1' == 1) //resultado é true, porque não esta avaliando o t
 console.log('02)', '1' === 1) //resultado é false, porque o primeiro numero 1 é string e o segundo é number. '===' comapra dois valore em valor e tipo.
 
 //VERIFICANDO DIFERENÇA
-console.log('03)', '3' != 3) //resultado é true, porque 3 é o mesmo numero. "!=" verifica se o valor é diferentem, apenas.
-console.log('04)', '3' !== 3) //resultado é false, porque o primeiro 3 é string e o segundo é numero. "!==" compara valor e tipo do valor (se é string ou number, por exemplo)
+console.log('03)', '3' != 3) //resultado é false, porque 3 é o mesmo numero. "!=" verifica se o valor é diferente, apenas.
+console.log('04)', '3' !== 3) //resultado é true, porque o primeiro 3 é string e o segundo é numero. "!==" compara valor e tipo do valor (se é string ou number, por exemplo)
 
 //VERIFICANDO SE É MAIOR OU MENOR
-console.log('05)', 3 < 2)
-console.log('06)', 3 > 2)
-console.log('07)', 3 >= 2)
-console.log('08)', 3 <= 2)
+console.log('05)', 3 < 2) //false
+console.log('06)', 3 > 2) //true
+console.log('07)', 3 >= 2) //true
+console.log('08)', 3 <= 2) //false
 
 //VERIFICANDO QUANTO A ALOCAÇÃO DE ESPAÇO NA MEMÓRIA
 const d1 = new Date(0) //0 nesse caso aponta para 1 de Janeiro de 1970

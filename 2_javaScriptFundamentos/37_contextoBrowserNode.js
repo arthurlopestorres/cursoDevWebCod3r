@@ -19,13 +19,13 @@ console.log(pessoa.falar())
 
 /*
 dentro do node, 'global' equivale ao objeto "window" no navegador
-em node, diferente do navegador, tudo que que é criado no global fica separado em modulos, e podemos acesse esse modulo global do codigo em node via "modelu.exports", via "this." e também via "global.".
+em node, diferente do navegador, tudo que que é criado no global fica separado em modulos, e podemos acesse esse modulo global do codigo em node via "module.exports", via "this." e também via "global.".
 */
 module.exports = { nome: 'Arthur', sobrenome: 'Lopes Torres'}
 console.log(module.exports.nome)
 
-console.log(module.exports === this)
-console.log(module.exports === global)
+console.log(module.exports === this) //false
+console.log(module.exports === global) //false
 
 global.idade = 24;
 console.log(global.idade)

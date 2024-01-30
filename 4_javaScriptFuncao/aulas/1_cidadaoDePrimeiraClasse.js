@@ -61,4 +61,4 @@ resultadoSoma(4)
 const funcao3 = () => console.log(this === window)
 funcao3() //executa-se dessa forma, como uma função normal.
 //2- na arrow function, o this não varia.
-bodyDaPagina.onclick = funcao3 //o retorno aqui é true, porque this, na arrow function está atrelado ao contexto léxico onde a função está inserida função, que é o global.
+bodyDaPagina.addEventListener('click', funcao3) //o retorno aqui é true, porque this, na arrow function está atrelado ao contexto léxico onde a função está inserida função, que é o global.
