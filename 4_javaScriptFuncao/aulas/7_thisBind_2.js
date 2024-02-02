@@ -2,7 +2,7 @@ function Pessoa(){
     this.idade = 0
 
     //a função set interval dispara uma outra função após um tempo passado para setInterval em milissegundos (em loop, ou seja, essa função vai ficar sendo disparada infinitamente a cada x milissegundos que forem indicados a ela.)
-    const aumentaAidade = () => {
+    function aumentaAidade() {
         this.idade++
         console.log(`Pessoa 1 = ${this.idade}`)
     }
@@ -14,7 +14,7 @@ function Pessoa2(){
     this.idade = 0
 
     //a função set interval dispara uma outra função após um tempo passado para setInterval em milissegundos (em loop, ou seja, essa função vai ficar sendo disparada infinitamente a cada x milissegundos que forem indicados a ela.)
-    const aumentaAidade = () => {
+    function aumentaAidade() {
         this.idade++
         console.log(`Pessoa 1 = ${this.idade}`)
     }

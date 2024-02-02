@@ -13,10 +13,10 @@ const prod2 = {
 */
 
 //Factory simples
-function criarPessoa(){
+function criarPessoa(nome, sobrenome){
     return {
-        nome: 'Arthur',
-        sobrenome: 'Lopes'
+        nome: nome,
+        sobrenome: sobrenome
     }
 }
-console.log(criarPessoa())
+console.log(criarPessoa('Arthur', 'Lopes Torres'))

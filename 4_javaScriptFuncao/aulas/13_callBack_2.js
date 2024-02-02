@@ -16,10 +16,8 @@ console.log(notasBaixas)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Com callback -- Filter é uma função callback que retoran true or false para cada elemento do array, aplicando sobre ele a função que for definida na sintaxe de Filter. Nesse caso, se for verdadeiro, o elemento entra no array notasBaixas, e se for false, não faz nada. O array inicia notas não é alterado pela função Filter.
 let notasBaixas2 = []
-notasBaixas2 = notas.filter((nota) => {
-    return nota < 7
-})
-console.log(notasBaixas2)
+notasBaixas2 = notas.filter( nota => nota < 7 )
+console.log('notas baixas 2: ', notasBaixas2)
 
 
 //posso fazer com arrow function e fazer o filter já declarando o array:

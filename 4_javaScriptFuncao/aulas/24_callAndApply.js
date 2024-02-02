@@ -1,6 +1,12 @@
 //Uma função pode ser chamada por call and apply, que sao formas direntes de se executar um função no JS.
 function getPreco(imposto = 0, moeda = 'R$'){
-    return `${moeda}${this.preco * (1 - this.desconto) * (1 + imposto)}`
+    return {
+        resultadoDaOperacao: `${moeda}${this.preco * (1 - this.desconto) * (1 + imposto)}`,
+        imposto: imposto,
+        moeda: moeda,
+        preco: this.preco,
+        desconto: this.desconto
+    }
 }
 console.log(getPreco()) //resultado é NaN, porque preco e desconto não estão definidos no escopo da função pura (não há no escopo global esses identificadores)
 
@@ -21,3 +27,4 @@ const carro = {
 }
 console.log(getPreco.call(carro, 0.15, '$'))
 console.log(getPreco.apply(carro, [0.20, 'BRL'])) //a diferença entre os metodos call e apply é apenas a forma de passar os parametros para a funcao getPreco.
+console.log('teste com bind: ', getPreco.bind(carro)(0.15, '$')) // funciona!
