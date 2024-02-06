@@ -53,6 +53,14 @@ const obj2 = {c:1, a: 5}
 const obj = Object.assign(destino, obj1, obj2)
 console.log(obj) //{ a: 5, b: 4, c: 1 }
 
+//? uma outra forma de inserir um objeto dentro de outro é utilizando o spreading
+let objRaiz = {} //nesse caso, ele não poderia ser contante, pela necessidade de eu chamá-lo novamente abaixo para alimentá-lo com os demais objetos.
+const objT1 = {nome: 'Arthur'}
+const objT2 = {sobrenome: 'Lopes Torres'}
+objRaiz = {...objT1, ...objT2}
+console.log('objRaiz: ', objRaiz) //objRaiz:  { nome: 'Arthur', sobrenome: 'Lopes Torres' }
+
+
 //////////////////////////////////////////////////////////////RESUMO/////////////////////////////////////////////////////////////////////////////
 //Object.values([objeto]) -> retorna todos os valores dentro do objeto (formato de array): [valor, valor, valor]
 //Object.keys([objeto]) -> retorna todas as chaves dentro do objeto (formato de array): [chave, chave, chave]
