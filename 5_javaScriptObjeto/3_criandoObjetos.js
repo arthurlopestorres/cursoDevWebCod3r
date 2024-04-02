@@ -19,7 +19,7 @@ function Produto(nome, preco, desconto){
     this.nome = nome 
     //esse método é publico (pode ser utilizado fora desta função)
     this.getPrecoComDesconto = () => {
-        return preco * (1 - desconto) 
+        return `${nome}: ${preco * (1 - desconto)}`
         //preco e desconto aqui, por nao estarem declarados como "this", não podem ser manipulados de forma publica. (estão encapsulados)
     }
 }
@@ -52,7 +52,7 @@ console.log(f1.getSalario(), f2.getSalario().toFixed(2))
 //QUINTA FORMA: Object.create -> não vamos nos aprofundar muito nela aqui
 const filha = Object.create(null)
 filha.nome = 'Ana'
-console.log(filha)
+console.log(filha) //ana
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 

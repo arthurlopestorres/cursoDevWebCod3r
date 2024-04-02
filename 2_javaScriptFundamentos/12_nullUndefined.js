@@ -35,7 +35,7 @@ const produto = {}
 console.log(produto.preco) //aqui, o resultado é undefined, porque o identificador foi declarado como um objeto, mas não está recebendo o valor indicado "preco".
 
 produto.preco = 3.5
-console.log(produto.preco) //esse tambem gera undefined, porque o identificador produto esta definido como objeto, a chave preco está definida como 3.5, mas a chave "a" não está recebendo valores para que passe valores para preco.
+console.log(produto.preco) //3.5
 
 produto.preco = undefined //evite atribuir undefined dessa forma.
 console.log(!!produto.preco) //resultado é false, porque estamos colocando a condição !! para true or false e undefined é false.

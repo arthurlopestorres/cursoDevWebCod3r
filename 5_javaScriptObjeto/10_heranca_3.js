@@ -21,6 +21,6 @@ console.log(`${filha2.nome} tem cabelo ${filha2.corCabelo}`) //o nome de filha 2
 console.log(Object.values(filha2)) //[ 'Bia' ]
 console.log(Object.entries(filha2)) //[ [ 'nome', 'Bia' ] ]
 
-for(let key in filha2){ //posso fazer uma validação para saber se filha 2 possui ou não uma propriedade propria:
-    filha2.hasOwnProperty(key) ? console.log(key) : console.log(`Por herança ${key}`)
+for(let i in filha2){ //posso fazer uma validação para saber se filha 2 possui ou não uma propriedade propria:
+    filha2.hasOwnProperty(i) ? console.log(i) : console.log(`Por herança ${i}`)
 }

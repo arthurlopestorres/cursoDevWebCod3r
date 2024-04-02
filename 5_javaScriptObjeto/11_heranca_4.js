@@ -1,12 +1,12 @@
 function MeuObjeto () {
 
 }
-console.log(MeuObjeto.prototype)
+console.log(MeuObjeto.prototype) //{}
 
 const obj1 = new MeuObjeto
 const obj2 = new MeuObjeto
-console.log(obj1.__proto__ === obj2.__proto__)
-console.log(MeuObjeto.prototype === obj1.__proto__)
+console.log(obj1.__proto__ === obj2.__proto__) //true
+console.log(MeuObjeto.prototype === obj1.__proto__)//true
 
 //pelos testes acima, conseguimos compreender que, quando criamos um objeto a partir de uma função contrutora, o prototipo do obj será o mesmo que funcaoConstrutura.prototype, que é igual a object.prototype, caso esteja declarada no contexto global.
 
@@ -15,24 +15,25 @@ MeuObjeto.prototype.falar = function(){
     console.log("olá! Meu nome é", this.nome)
 }
 console.log(MeuObjeto.prototype.nome) //é assim que manipulo o objeto de uma função contratutora com notação não literal (por atribuição.)
-console.log(obj1.nome)
-console.log(obj2.nome)
+console.log(obj1.nome) //Arthur
+console.log(obj2.nome) //Arthur
 
-obj1.falar()
+obj1.falar() //olá! Meu nome é Arthur
 
 obj2.nome = 'Rafael'
-obj2.falar()
+obj2.falar() //olá! Meu nome é Rafael
 
 const objt3 = {}
 objt3.__proto__ = MeuObjeto.prototype
 objt3.nome = "Maria"
-objt3.falar()
+objt3.falar() //olá! Meu nome é Maria
 
 //resumindo a loucura...
 console.log((new MeuObjeto).__proto__) //{ nome: 'Arthur', falar: [Function (anonymous)] }
 console.log((new MeuObjeto).__proto__ === MeuObjeto.prototype) //true
-console.log(MeuObjeto.__proto__ === Function.prototype) //true -> vale notar que toda função também tem um prototype.
+console.log(MeuObjeto.__proto__ === MeuObjeto.prototype) //false
 console.log(MeuObjeto.prototype === Function.prototype) //false
+console.log(MeuObjeto.__proto__ === Function.prototype) //true -> vale notar que toda função também tem um prototype.
 console.log(MeuObjeto.prototype.__proto__ === Object.prototype) //true
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

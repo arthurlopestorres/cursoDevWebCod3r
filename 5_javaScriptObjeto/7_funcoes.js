@@ -9,12 +9,17 @@ const pessoa = {
 ////////////////////////////////////////////////////
 
 //PRIMEIRA FUNÇÃO: Object.keys([objeto]) -> retorna todas as chaves dentro do objeto.
-console.log(Object.keys(pessoa))
+Object.keys(pessoa).forEach(valor => console.log(valor))
+console.log('-------------------------------------------------')
 
 ////////////////////////////////////////////////////
 
 //SEGUNDA FUNÇÃO: Object.values([objeto]) -> retorna todos os valores dentro do objeto
-console.log(Object.values(pessoa))
+let valores = Object.values(pessoa)
+for(i in valores){
+    console.log(valores[i])
+}
+console.log('-------------------------------------------------')
 
 ////////////////////////////////////////////////////
 
@@ -22,14 +27,14 @@ console.log(Object.values(pessoa))
 console.log(Object.entries(pessoa))
 //eu poderia percorrer com um forEach por exemplo:
 Object.entries(pessoa).forEach(entry => {
-    console.log(`${entry[0]}: ${entry[1]}`)
+    console.log(`${entry[0]}: ${entry[1]}`) //[ [ 'nome', 'Rebeca' ], [ 'idade', 2 ], [ 'peso', 13 ] ]
 })
-
+console.log('-------------------------------------------------')
 //outra forma de fazer é usando destructuring de arrays:
 Object.entries(pessoa).forEach(([chave, valor]) => {
     console.log(`${chave}: ${valor}`)
 })
-
+console.log('-------------------------------------------------')
 ////////////////////////////////////////////////////
 
 //QUARTA FUNÇÃO: Object.defineProperty(objetoAlvo, 'nomeDaPropriedade', {objeto com caracteristicas da propriedade}) -> define uma nova propriedade de um objeto
@@ -42,22 +47,22 @@ Object.defineProperty(pessoa, 'dataDeNascimento', {
 pessoa.dataDeNascimento = '01/01/2017'
 console.log(pessoa.dataDeNascimento)
 console.log(Object.keys(pessoa)) //vai listar a data de nascimento, porque está como enumerable: true. Se estivesse falso, eu poderia acessar, mas nao retorna-lo na listagem.
-
+console.log('-------------------------------------------------')
 ////////////////////////////////////////////////////
 
 //QUINTA FUNÇÃO: Object.assign() -> faz com que outros objetos sejam concatenados no primeiro, sobrescrevendo valores, caso a mesma chave exista.
-const destino = {a: 1}
-const obj1 = {b: 4}
-const obj2 = {c:1, a: 5}
+const obj1 = {a: 1}
+const obj2 = {b: 4}
+const obj3 = {c:1, a: 5}
 
-const obj = Object.assign(destino, obj1, obj2)
-console.log(obj) //{ a: 5, b: 4, c: 1 }
-
+const obj = Object.assign(obj1, obj2, obj3)
+console.log('objeto completo: ', obj) //{ a: 5, b: 4, c: 1 }
+console.log('-------------------------------------------------')
 //? uma outra forma de inserir um objeto dentro de outro é utilizando o spreading
-let objRaiz = {} //nesse caso, ele não poderia ser contante, pela necessidade de eu chamá-lo novamente abaixo para alimentá-lo com os demais objetos.
 const objT1 = {nome: 'Arthur'}
 const objT2 = {sobrenome: 'Lopes Torres'}
-objRaiz = {...objT1, ...objT2}
+const objRaiz =  {...objT1, ...objT2}
+objRaiz.idade = 25
 console.log('objRaiz: ', objRaiz) //objRaiz:  { nome: 'Arthur', sobrenome: 'Lopes Torres' }
 
 
@@ -65,5 +70,5 @@ console.log('objRaiz: ', objRaiz) //objRaiz:  { nome: 'Arthur', sobrenome: 'Lope
 //Object.values([objeto]) -> retorna todos os valores dentro do objeto (formato de array): [valor, valor, valor]
 //Object.keys([objeto]) -> retorna todas as chaves dentro do objeto (formato de array): [chave, chave, chave]
 //Object.entries([objeto])-> retorna todas as chaves e valores do objeto em formato de array: [[chave, valor], [chave, valor], [chave, valor]]
-//Object.defineProperty([objeto], [propriedade(string), {value: [valor], enumerable: [true or false], writable: [true or false]}])
+//Object.defineProperty([ objeto ],[ propriedade(string) ],[ {value: [valor], enumerable: [true or false], writable: [true or false]} ])
 //Object.assign([objeto], [objeto], ...) -> concatena varios objetos, devolvendo um objeto com todos os demais concatenados.

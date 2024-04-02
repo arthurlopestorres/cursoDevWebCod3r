@@ -22,7 +22,7 @@ const obj4 = {
 console.log(obj4)
 
 ////////////////////////////////////////////////////////////////////////////
-
+//? duas formas diferentes de anotar funções dentro de objetos:
 const obj5 = {
     funcao1: function(){
         //...
