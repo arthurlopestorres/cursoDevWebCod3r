@@ -15,29 +15,28 @@ console.log('-------------------------------------------------')
 ////////////////////////////////////////////////////
 
 //SEGUNDA FUNÇÃO: Object.values([objeto]) -> retorna todos os valores dentro do objeto
-let valores = Object.values(pessoa)
-for(i in valores){
-    console.log(valores[i])
-}
+let valores = Object.values(pessoa).forEach(valor => console.log(valor))
 console.log('-------------------------------------------------')
 
 ////////////////////////////////////////////////////
 
 //TERCEIRA FUNÇÃO: Object.entries([objeto]) -> retorna todos os pares chave: valor dentro do objeto (EM FORMA DE ARRAY)
-console.log(Object.entries(pessoa))
+console.log(Object.entries(pessoa)) //[ [ 'nome', 'Rebeca' ], [ 'idade', 2 ], [ 'peso', 13 ] ]
 //eu poderia percorrer com um forEach por exemplo:
 Object.entries(pessoa).forEach(entry => {
-    console.log(`${entry[0]}: ${entry[1]}`) //[ [ 'nome', 'Rebeca' ], [ 'idade', 2 ], [ 'peso', 13 ] ]
+    console.log(`${entry[0]}: ${entry[1]}`) //entry = [[entry0, entry1]] -> Nome: Rebeca
 })
 console.log('-------------------------------------------------')
+
 //outra forma de fazer é usando destructuring de arrays:
 Object.entries(pessoa).forEach(([chave, valor]) => {
     console.log(`${chave}: ${valor}`)
 })
 console.log('-------------------------------------------------')
+
 ////////////////////////////////////////////////////
 
-//QUARTA FUNÇÃO: Object.defineProperty(objetoAlvo, 'nomeDaPropriedade', {objeto com caracteristicas da propriedade}) -> define uma nova propriedade de um objeto
+//QUARTA FUNÇÃO: Object.defineProperty( 'objetoAlvo', 'nomeDaPropriedade', {objeto com caracteristicas da propriedade} ) -> define uma nova propriedade de um objeto
 Object.defineProperty(pessoa, 'dataDeNascimento', {
     enumerable: true, //significa que pode retornar na listagem do objeto (utilizando Object.keys(), por exemplo
     writable: false, //nesse caso, significa que o valor atribuido a esta propriedade não pode ser alterado. -> mesmo que o Objetct.freeze
@@ -48,6 +47,7 @@ pessoa.dataDeNascimento = '01/01/2017'
 console.log(pessoa.dataDeNascimento)
 console.log(Object.keys(pessoa)) //vai listar a data de nascimento, porque está como enumerable: true. Se estivesse falso, eu poderia acessar, mas nao retorna-lo na listagem.
 console.log('-------------------------------------------------')
+
 ////////////////////////////////////////////////////
 
 //QUINTA FUNÇÃO: Object.assign() -> faz com que outros objetos sejam concatenados no primeiro, sobrescrevendo valores, caso a mesma chave exista.
@@ -63,7 +63,7 @@ const objT1 = {nome: 'Arthur'}
 const objT2 = {sobrenome: 'Lopes Torres'}
 const objRaiz =  {...objT1, ...objT2}
 objRaiz.idade = 25
-console.log('objRaiz: ', objRaiz) //objRaiz:  { nome: 'Arthur', sobrenome: 'Lopes Torres' }
+console.log('objRaiz: ', objRaiz) //objRaiz:  { nome: 'Arthur', sobrenome: 'Lopes Torres', idade: 25 }
 
 
 //////////////////////////////////////////////////////////////RESUMO/////////////////////////////////////////////////////////////////////////////

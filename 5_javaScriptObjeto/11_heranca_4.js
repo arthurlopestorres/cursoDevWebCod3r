@@ -23,7 +23,7 @@ obj1.falar() //olá! Meu nome é Arthur
 obj2.nome = 'Rafael'
 obj2.falar() //olá! Meu nome é Rafael
 
-const objt3 = {}
+const objt3 = new Object
 objt3.__proto__ = MeuObjeto.prototype
 objt3.nome = "Maria"
 objt3.falar() //olá! Meu nome é Maria
@@ -58,3 +58,7 @@ console.log(Object.prototype.nome) //Maria piu
 
 object1.nome = 'Maria'
 console.log(object1.nome) //Maria
+
+console.log(object1.__proto__ === FuncaoConstrutora.prototype) //true
+console.log(FuncaoConstrutora.__proto__ === Function.prototype) //true
+console.log(Function.prototype.__proto__ === Object.prototype) //true
