@@ -1,6 +1,6 @@
 //funcionalidades interessantes que podemos fazer com herança.
 
-console.group(typeof String) //function
+console.log(typeof String) //function
 console.log(typeof Array) //function
 console.log(typeof Object) //function
 //os três elementos acima, por serem funções, possuem um atributo chamado .prototype

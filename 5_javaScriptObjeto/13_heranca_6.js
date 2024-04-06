@@ -11,11 +11,10 @@ console.log(aula1, aula2) //Aula { nome: 'Bem Vindo', videoID: 123 } Aula { nome
 
 //SIMULANDO O NEW, usado em new Aula, por exemplo:
 function novo(f, ...params){//recebe função e paramentros
-    const obj = {}
-
+    const obj = new Object
     obj.__proto__ = f.prototype
 
-    f.apply(obj, params)
+    f.bind(obj)(params)
     
     return obj
 }

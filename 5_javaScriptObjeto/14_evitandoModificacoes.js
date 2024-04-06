@@ -5,7 +5,7 @@
 const produto = Object.preventExtensions({
     nome: 'arthur', preco: 1.99, tag: 'promoção'
 })
-console.log('Extensivel:', Object.isExtensible(produto)) // o objeto "produto" não é extensível
+console.log('Extensivel:', Object.isExtensible(produto)) // False -> o objeto "produto" não é extensível
 
 produto.nome = 'borracha'
 produto.descricao = 'borracha branca'
@@ -24,7 +24,7 @@ pessoa.idade = 34
 
 console.log(pessoa)
 
-//SEGUNDO: Object.freeze = faz com que o objeto não possa ser modificado de forma alguma.
+//TERCEIRO: Object.freeze = faz com que o objeto não possa ser modificado de forma alguma.
 const cachorro = {nome: 'bobi', idade: 16, currentStatus: 'deceased'}
 Object.freeze(cachorro)
 cachorro.nome = 'marroni'
