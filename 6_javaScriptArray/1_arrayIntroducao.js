@@ -16,30 +16,36 @@ aprovados[3] = 'Paulo' //essa é a forma mais comum para substituir um elemento 
 aprovados.push('Arthur') //essa é a forma mais comum de inserir elementos num array na ultima posição.
 console.log(aprovados) //[ 'bia', 'carlos', 'ana', 'Paulo', 'Arthur' ]
 
-//posso verificar o tamanho de um array utilizando "length":
+//* posso verificar o tamanho de um array utilizando "length":
 console.log(aprovados.length) //5
 
-//posso inserir um elemento num array numa posição especifica. Os demais elementos entre eles, apesar disso, serão considerados "undefined"
+//* posso inserir um elemento num array numa posição especifica. Os demais elementos entre eles, apesar disso, serão considerados "undefined"
 aprovados[9] = "Maria"
 console.log(aprovados, aprovados.length) //[ 'bia', 'carlos', 'ana', 'Paulo', 'Arthur', <4 empty items>, 'Maria' ] 10
 
 
-//////////////////////////////////////////////////VAMOS VERIFICAR AGORA ALGUMAS FUNÇÕES PARA ARRAYS
+//! VAMOS VERIFICAR AGORA ALGUMAS FUNÇÕES PARA ARRAYS
 
-//.sort() -> troca a ordenação dos itens do array de forma randomica. Esse método altera o array original, mas há outros métodos que apenas retornam um novo array utilizando dos dados do array original.
+//? .sort() -> troca a ordenação dos itens do array de forma randomica. Esse método altera o array original, mas há outros métodos que apenas retornam um novo array utilizando dos dados do array original.
 console.log(aprovados.sort())
 
-//deletando um item do array:
+//? deletando um item do array:
 delete aprovados[1] //estou excluindo o nome na segunda posição, substituindo por undefined.
 console.log(aprovados)
 
 //reorganizado apenas por aqui:
 aprovados = ['arthur', 'maria', 'henrique']
 
-//.splice() -> essa função pode servir para adicionar elementos, excluir elementos, ou remover e adicionar ao mesmo tempo (nesse caso, a exclusão é definitiva, não é substituído por undefined). 
-// Sintaxe: [array].splice([index], [quantidade de elementos a serem excluídos -> para ferente no array], [elementos a serem adicicionados na altura do index indicado como primerio elemento do splice.])
-aprovados.splice(1, 1, 'Elemento 1', 'Elemento 2') //exclui "maria" e insere "Elemento 1", depois insere "Elemento 2" na altura do indice indicado:
+//? .splice() -> essa função pode servir para adicionar elementos, excluir elementos, ou remover e adicionar ao mesmo tempo (nesse caso, a exclusão é definitiva, não é substituído por undefined). 
+//* Sintaxe: [array].splice([index], [quantidade de elementos a serem excluídos], [elementos a serem adicicionados na altura do index indicado como primerio elemento do splice.])
+
+aprovados.splice(1, 1, 'Elemento 1', 'Elemento 2') //exclui "maria" e insere "Elemento 1" e "Elemento 2" na altura do indice indicado:
 console.log(aprovados) //[ 'arthur', 'Elemento 1', 'Elemento 2', 'henrique' ]
+
+//* se que quisesse apenas deletar "henrique" do array, por exemplo, eu poderia fazer da seguinte forma:
+
+aprovados.splice(3, 1)
+console.log('deletando henrique: ', aprovados) //deletando henrique:  [ 'arthur', 'Elemento 1', 'Elemento 2' ]
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //              *formas de declarar array:              //
