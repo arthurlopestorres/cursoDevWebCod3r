@@ -3,17 +3,9 @@
 
 const validaEntreMinMax = (numero, minimo, maximo, inclusivo = false) => {
     if(inclusivo == true){
-        if(numero == minimo || numero == maximo){
-            console.log(true)
-        } else{
-            console.log(false)
-        }
+        numero == minimo || numero == maximo ? console.log(true) : console.log(false)
     } else{
-        if (numero > minimo && numero < maximo){
-            console.log(true)
-        } else{
-            console.log(false)
-        }
+        numero > minimo && numero < maximo ? console.log(true) : console.log(false)
     }
 }
 

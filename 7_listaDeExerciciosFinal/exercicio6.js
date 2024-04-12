@@ -2,9 +2,14 @@
 
 const inverteValor = (valor) => {
     switch(typeof valor){
-        case "boolean": return console.log(!valor) 
-        case "number": return console.log(valor -= (2 * valor)) 
-        default: return console.log(`booleano ou número esperados, mas o parâmetro é do tipo ${typeof valor}`)
+        case "boolean": 
+        console.log(!valor) 
+        break
+        case "number": 
+        console.log(valor -= (2 * valor)) 
+        break
+        default: 
+        console.log(`booleano ou número esperados, mas o parâmetro é do tipo ${typeof valor}`)
     }
 }
 inverteValor(2)

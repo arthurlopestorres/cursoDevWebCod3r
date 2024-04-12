@@ -1,9 +1,10 @@
-//o map serve para transformar dados. A ideia do map é percorrer o array oficial, transformar os dados e devolve-los a um novo array, sem modificar o original.
+//!O map serve para transformar dados. 
+//? A ideia do map é percorrer o array oficial, transformar os dados e devolve-los a um novo array, sem modificar o original.
 
 const numeros = [1, 2, 3]
 const numerosDobrados = numeros.map(numero => numero * 2)
 
-console.log(numeros)
+console.log(numeros) //[1, 2, 3]
 console.log(numerosDobrados) //[ 2, 4, 6 ]
 
 const soma10 = numero => numero + 10
