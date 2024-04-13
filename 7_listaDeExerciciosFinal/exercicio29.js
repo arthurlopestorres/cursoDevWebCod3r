@@ -26,3 +26,6 @@ function retornaSegundoMaior (array) {
     console.log('o segundo maior é:', maiorAtualizado)
 }
 retornaSegundoMaior (arrayDeNumeros)
+
+//! ou simplesmente posso utilizar o reduce (04/2024):
+function retornaMaior (array) {return array.reduce((atual, proximo) => atual > proximo ? atual : proximo)}

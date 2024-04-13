@@ -1,4 +1,5 @@
-// Elabore uma função que recebe um objeto com estudantes e suas notas. As notas de cada estudante estarão num array, conforme exemplo abaixo. Você deverá calcular a média da nota de cada aluno e retornar um objeto com os atributos nome e media, que indica o aluno que teve o melhor desempenho nas notas.
+// Elabore uma função que recebe um objeto com estudantes e suas notas. As notas de cada estudante estarão num array, conforme exemplo abaixo. 
+// Você deverá calcular a média da nota de cada aluno e retornar um objeto com os atributos nome e media, que indica o aluno que teve o melhor desempenho nas notas.
 let alunos = {
     Arthur: [10, 10, 10, 10],
     Joao: [8, 7.6, 8.9, 6],
@@ -6,32 +7,26 @@ let alunos = {
     Carla: [7, 7, 8, 9],
 }
 
-function retornaArrayDeAlunosComMedia(objeto){
-    let listaDeAlunos = Object.keys(objeto)
-    let listaDeAlunosComMedia = {}
-
-    for(let i in listaDeAlunos){ 
-        listaDeAlunosComMedia[listaDeAlunos[i]] = ((objeto[listaDeAlunos[i]].reduce((total, atual) => total + atual) / objeto[listaDeAlunos[i]].length).toFixed(2))
-    }
-
-    return listaDeAlunosComMedia
+let calculaMedia = (alunoNotas) => {
+    let mediaDasNotas = alunoNotas.reduce((notaAtual, proximaNota) => notaAtual + proximaNota) / alunoNotas.length
+    return mediaDasNotas
 }
 
-function retornaAlunoComMaiorMedia(objeto) {
-    let arrayDeAlunosComMedia = Object.entries(retornaArrayDeAlunosComMedia(objeto))
-    let listaDeMedias = Object.values(retornaArrayDeAlunosComMedia(objeto)).map(media => Number(media))
-    let maiorMedia = listaDeMedias[0]
+function retornaMaiorMedia(alunos){
+    let listaDeAlunos = Object.keys(alunos)
+    let alunosEmedias = {}
 
-    for(let i = 0; i < listaDeMedias.length; i++){
-        if(listaDeMedias[i] > maiorMedia){
-            maiorMedia = listaDeMedias[i]
-        }
-    }
+    listaDeAlunos.forEach(aluno => {
+        let media = calculaMedia(alunos[aluno]).toFixed(2)
+        alunosEmedias[aluno] = media
+    })
 
-    let alunoDeMaiorMedia = arrayDeAlunosComMedia.filter(aluno => aluno[1] == maiorMedia)
-    let bestAluno = {}
-    bestAluno[alunoDeMaiorMedia[0][0]] = alunoDeMaiorMedia[0][1]
+    let entriesAlunosEmedias = Object.entries(alunosEmedias)
+    let alunoMaiorMedia = entriesAlunosEmedias.reduce((atual, proximo) => Number(atual[1]) > Number(proximo[1]) ? atual : proximo)
+    
+    let resultadoMaiorMedia = new Object
+    resultadoMaiorMedia[alunoMaiorMedia[0]] = Number(alunoMaiorMedia[1])
 
-    console.log('melhor aluno:', bestAluno)
+    return resultadoMaiorMedia
 }
-retornaAlunoComMaiorMedia(alunos)
+console.log(retornaMaiorMedia(alunos))
