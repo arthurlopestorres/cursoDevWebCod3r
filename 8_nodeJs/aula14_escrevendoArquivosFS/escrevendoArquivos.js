@@ -7,7 +7,7 @@ const produto = {
 }
 
 //quero transformar esse objeto em texto (JSON) e fazer com que ele persista no disco. Sintaxe;
-//fs.writeFile(caminho da pasta + '/nome do arquivo', informação a ser salva, callBack de erro)
+//fs.writeFile('caminho do arquivo', JSON.stringify('informação a ser salva em formato de JSON'), callBack que recebe erros e trata eles)
 fs.writeFile(__dirname + '/arquivoGerado.json', JSON.stringify(produto), err => {
     console.log(err || 'arquivo salvo!')
 })

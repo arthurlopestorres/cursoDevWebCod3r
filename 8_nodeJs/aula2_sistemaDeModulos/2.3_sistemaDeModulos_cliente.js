@@ -5,8 +5,8 @@ const moduloB = require('./2.2_sistemaDeModulos_2') //importando um arquivo js, 
 //para acessar aquivos de outros modulos, preciso referencia-los como objetos (porque são):
 console.log('moduloA inteiro ->', moduloA)
 console.log(moduloA.ola)
-console.log(moduloA.ateLogo)
 console.log(moduloA.bemVindo)
+console.log(moduloA.ateLogo)
 
 console.log('----------------------------------------------------')
 

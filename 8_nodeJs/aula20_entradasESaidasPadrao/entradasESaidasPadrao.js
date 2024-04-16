@@ -5,7 +5,7 @@ const anonimo = process.argv.indexOf('-a') !== -1
 
 //vamos trabalhar com o dado recebido em anonimo, dando feedback no 'stdout'(monitor) e no 'stdin'(teclado):
 if(anonimo){
-    process.stdout.write('Fala Anônimo!\n') // \n aqui significar 'enter' no teclado.
+    process.stdout.write('Fala Anônimo!\n') // \n aqui significa 'enter' no teclado.
     process.exit() //encerra o processo, o user seja anonimo.
 }else{
     process.stdout.write('infome seu nome: ')

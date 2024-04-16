@@ -46,8 +46,8 @@ const passo33 = (ctx) => {
 
 let contexto2 = {}
 const injetaValoresNoObjeto2 = (ctx, ...passos) => {
-    for(let i in passos){
-        passos[i](ctx)
+    for(let passo of passos){
+        passo(ctx)
     }
 }
 injetaValoresNoObjeto2(contexto2, passo11, passo22, passo33)
