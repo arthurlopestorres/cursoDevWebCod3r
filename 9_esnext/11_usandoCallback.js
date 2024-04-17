@@ -6,7 +6,7 @@
 //primeiro (nesta aula), faremos utilizando callback
 //depois, na proxima aula, faremos esse processo utilizando promise
 
-//obtendo sem promise:
+//! obtendo sem promise:
 //o nome da estrategia abaixo é callback hell (hell, porque é uma callback dentro da outra que começa a ficar muito dificil de entender)
 
 const http = require('http') //estamos utilizando, nesse caso, o proprio modulo interno do note (http)

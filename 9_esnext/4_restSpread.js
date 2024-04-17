@@ -6,9 +6,9 @@ function recebendoComRest(...restArray){
 }
 recebendoComRest('Arthur', 'Izabelle')
 
-/////////////////////////////////////////////////////////operador Spread/////////////////////////////////////////////////////////
+//! operador Spread
+//* usando spread com OBJETO
 
-/////////////////////////////////////////////////////////usando spread com OBJETO
 const funcionario = {nome: 'Maria', salario: 12345.99}
 //criando outro objeto usando spread:
 const clone = {ativo: true, ...funcionario} //quando eu utilizo ...funcionario, estou pegando todos os elementos do objeto funcionario e inserindo-os como parâmetros, também, do objeto 'clone':
@@ -18,7 +18,7 @@ clone.nome = 'Arthur'
 console.log('este é o objeto base:', funcionario) //este é o objeto base: { nome: 'Maria', salario: 12345.99 }
 console.log('este é o objeto clone:', clone) //este é o objeto clone: { ativo: true, nome: 'Arthur', salario: 12345.99 }
 
-/////////////////////////////////////////////////////////usando spread com ARRAY
+//* usando spread com ARRAY
 const grupoA = ['João', 'Pedro', 'Glória']
 const grupoB = ['Arthur', 'Henrique', 'Izabelle']
 const grupoFinal = [...grupoA, ...grupoB] 

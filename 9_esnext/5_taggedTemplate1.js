@@ -6,8 +6,7 @@ const tag = (partes, ...valores) => {
 }
 const aluno = 'Gui'
 const situacao = 'Aprovado'
-console.log(tag `${aluno} está ${situacao}`)
-//[ '', ' está ', '' ] -------> vem de partes
+console.log(tag `As ${aluno} está ${situacao}`)
+//[ 'As ', ' está ', '' ] -------> vem de partes
 //[ 'Gui', 'Aprovado' ] -------> vem de ...valores
 //outra string -------> vem da função 'tag'
-

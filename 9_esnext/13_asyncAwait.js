@@ -6,7 +6,9 @@ const http = require('http')
 
 const getTurma = letraDaTurma => {
     const url = `http://files.cod3r.com.br/curso-js/turma${letraDaTurma.toUpperCase()}.json`
+
     return new Promise((resolve, reject) => {
+
         http.get(url, resposta => {
             let resultado = ''
             resposta.on('data', dados =>{
@@ -20,6 +22,7 @@ const getTurma = letraDaTurma => {
                 }
             }) 
         })
+
     })
 }
 
@@ -31,7 +34,7 @@ const getTurma = letraDaTurma => {
 let obterAlunos = async () => {
     const turmaA = await getTurma('a') //aqui, estou retornando para 'turmaA' o resultado da função getTurma('a')
     const turmaB = await getTurma('b') //aqui, estou retornando para 'turmaB' o resultado da função getTurma('b')
-    const turmaC = await getTurma('c') //aqui, estou retornando para 'turmaB' o resultado da função getTurma('c')
+    const turmaC = await getTurma('c') //aqui, estou retornando para 'turmaC' o resultado da função getTurma('c')
     return [].concat(turmaA, turmaB, turmaC)
 } //uma função async retorna um objeto chamado AsyncFunction, então eu preciso executar obterAlunos e utiliza '.then' para acessar / tratar os dados
 obterAlunos().then(alunos => alunos.map(aluno => aluno.nome)).then(nomeDosAlunos => console.log(nomeDosAlunos))

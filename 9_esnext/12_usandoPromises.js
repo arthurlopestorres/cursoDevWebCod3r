@@ -1,4 +1,4 @@
-//continuando o tema da aula passada, vamos utilizar promises para evitar o callback hell.
+//! continuando o tema da aula passada, vamos utilizar promises para evitar o callback hell.
 //primeiro, entretanto, vamos utilizar promises, mas numa estrutura parecida com o callback hell.
 //obtendo sem promise:
 //o nome da estrategia abaixo é callback hell (hell, porque é uma callback dentro da outra que começa a ficar muito dificil de entender)
