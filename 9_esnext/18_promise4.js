@@ -1,4 +1,4 @@
-//como criar varias promises diferentese ir chamando-as sequencialmente.
+//como criar varias promises diferentes e ir chamando-as sequencialmente.
 function geraNumeroAleatorio(min, max, tempo){
     if(min > max){
         [max, min] = [min, max]

@@ -8,7 +8,8 @@ const fs = require('fs')
 function leArquivoTxt(caminho){
     return new Promise((resolve, reject) => {
         function retornaString(erro, conteudo){ 
-                resolve(conteudo.toString())
+                let content = conteudo.toString()
+                resolve(content)
         }
         fs.readFile(caminho, retornaString)
     })

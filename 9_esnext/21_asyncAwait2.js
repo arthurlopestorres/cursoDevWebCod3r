@@ -27,13 +27,13 @@ async function gerarMegaSena(quantidadeDeNums){
         throw('Que chato!!!')
     }
 }
-gerarMegaSena(8) //IMPORTANTE: APENAS DE DENTRO DA FUNCAO NAO HAVER UMA NOVA PROMESSA, É PRECISO AGUARDARMOS UMA PROMESSE PARA QUE POSSAMOS TER O RESULTADO, POR ISSO É PRECISO USTILZIARMOS '.THEN'
+gerarMegaSena(6) //IMPORTANTE: APENAS DE DENTRO DA FUNCAO NAO HAVER UMA NOVA PROMESSA, É PRECISO AGUARDARMOS UMA PROMESSE PARA QUE POSSAMOS TER O RESULTADO, POR ISSO É PRECISO USTILZIARMOS '.THEN'
     .then(console.log)
     .catch(console.log)
 
 
 //APENAS PARA TREINO, A MELHOR FORMA QUE ENCONTREI DE CRIAR OS NUMEROS DA MEGA SENA FOI:
-function generateMegaSenaNumbers(){
+function generateMegaSenaNumbers(quantidadeDeNumeros = 6){
     const megaSenaNumbers = []
 
     function pushRandomNumber(){
@@ -43,7 +43,7 @@ function generateMegaSenaNumbers(){
             megaSenaNumbers.push(rdmNumber)
         }
     }
-    while(megaSenaNumbers.length < 6){
+    while(megaSenaNumbers.length < quantidadeDeNumeros){
         pushRandomNumber()
     }
     return megaSenaNumbers
