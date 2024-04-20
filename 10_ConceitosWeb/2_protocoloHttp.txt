@@ -26,10 +26,12 @@ HTTP tem vários métodos:
 2- POST: para enviar dados (salvando-os num local novo da memoria)
 3- PUT: para enviar dados (atualizando dados já existentes no host)
 4- DELETE: para remover dados salvos
-5- TRACE
-6- OPTIONS
-7- CONNECT
-8- HEAD
+5- TRACE (O método TRACE consiste em uma chamada loop-back de um determinado recurso. Esse método permite ao cliente “ver” todo o processo de ida e volta da requisição. Muito utilizado em procedimento de testes e diagnósticos relacionado a comunicação com o servidor.)
+6- OPTIONS (é utilizado para que um cliente possa descobrir quais as opções de requisição permitidas para um determinado recurso em um servidor)
+7- CONNECT (começa a comunicação bidirecional com o recurso solicitado. Ele pode ser usado para abrir um túnel.
+Por exemplo, o método CONNECT pode ser utilizado para acessar websites que usam SSL (en-US) (HTTPS). O cliente solicita a um servidor proxy HTTP que tunelize a conexão TCP para o destino desejado. O servidor então procede para fazer a conexão em nome do cliente. Uma vez que a conexão foi estabelecida pelo servidor, o servidor Proxy continua a proxy do fluxo TCP para e do cliente.
+CONNECT é um método hop-by-hop)
+8- HEAD (O método HTTP HEAD solicita os cabeçalhos retornados de um recurso específico que foi requisitado por um método HTTP GET. Tal solicitação pode ser feita antes de baixar um grande recurso para economizar largura de banda, por exemplo.)
 
 ///////////////////////////////////////////////////////////
 REQUISIÇÃO E RESPOSTA  

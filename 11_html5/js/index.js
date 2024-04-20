@@ -2,8 +2,8 @@
 //abaixo, estou pegando todas as tags a
 
 document.querySelectorAll('[webModerno-nav]').forEach(element => {
-    element.addEventListener('click', (event) => { //o "e" recebido aqui é o evento padrão da tag, nesse caso o evento de acessar a URL que a tag 'a' carrega.
-        event.preventDefault() //aqui, estamos prevenindo que o evento padrão aconteça, ou seja acessar o link
+    element.addEventListener('click', (e) => { //o "e" recebido aqui é o evento padrão da tag, nesse caso o evento de acessar a URL que a tag 'a' carrega.
+        e.preventDefault() //aqui, estamos prevenindo que o evento padrão aconteça, ou seja acessar o link
 
         const conteudo = document.getElementById('conteudo')
 

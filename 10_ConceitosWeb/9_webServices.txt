@@ -7,7 +7,7 @@ Resposta: é um serviço (obviamente).
 O web service vai proporcionar uma comunicação fluida entre diferentes linguagens de programação a partir de um formato texto (leia-se, JSON, XML, arquivos de texto, etc.).
 
 ----------------------------------------------------------------------
-Há dua grandes alternativas para trabalhar com web services:
+Há duas grandes alternativas para trabalhar com web services:
 
 SOAP (Simples Object Access Protocol) -> 
 * WSDL (Conceito utilizado para SOAP que é Web Service Descriptional Language); 

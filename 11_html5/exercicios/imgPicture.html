@@ -87,7 +87,7 @@
         const inicio = innerWidth
         const fim = -slide.clientWidth
 
-        slide.style.left = `{inicio}px`
+        slide.style.left = `${inicio}px`
 
         mover(slide, inicio, fim, 5, () => {
             exibirSlide(slides, getProximo(slides, slide))

@@ -2,16 +2,17 @@
 <!-- instalamos o express e o body-parser -->
 <h1>Formulário</h1>
 
-<!-- action nesse caso vai apontar para o endpoint do servidor, e o método será post para criar usuários -->
+<!--! action nesse caso vai apontar para o endpoint do servidor, e o método será post para criar usuários -->
 <form method="POST">
-    <!-- se eu mudar o método para GET no formulário, os parametros serão enviados ao servidor diretamente na URL -->
+    <!--* se eu mudar o método para GET no formulário, os parametros serão enviados ao servidor diretamente na URL, o que não é seguro -->
     <input type="hidden" value="3">
     <input type="text" name="nome">
-    <!-- vamos criar um input de senha -->
+    <!--? vamos criar um input de senha -->
     <input type="password" name="senha">
-    <!-- vamos criar um campo de texto no formulario: textarea -->
+    <!--? vamos criar um campo de texto no formulario: textarea -->
     <textarea name="biografia" cols="30" rows="10"></textarea>
     <div>
+        <!--! QUANDO USO O MESMO NAME, ESTOU FAZENDO COM QUE ELES SEJAM OPÇÕES CONCORRENTES - QUANDO FOR SELECIONADO, O OUTRO DESMARCA -->
         <input type="radio" name="tipo" value="admin">Admin
         <input type="radio" name="tipo" value="regular">Regular
         <input type="radio" name="tipo" value="professor">Professor
@@ -19,7 +20,7 @@
     <div>
         <input type="checkbox" name="ativo">Ativo
     </div>
-    <!-- para eu colocar as opções para serem selecionadas no form em forma de dropdown, uso select -->
+    <!--? para eu colocar as opções para serem selecionadas no form em forma de dropdown, uso select -->
     <select name="estado">
         <option value="ac">Acre</option>
         <option value="sp">São Paulo</option>

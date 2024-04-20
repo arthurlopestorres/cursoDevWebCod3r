@@ -1,4 +1,4 @@
-Vamos falar nessa aula sobre o protocolo HTTPS (HTTPSeguro)
+Vamos falar nessa aula sobre o protocolo HTTPS (HTTPSecure)
 Neste protocolo, em contraste com o HTTP, a comunicação fica criptografada.
 
 A segurnaça é feita em cima de um protocolo que criptografa os dados a partir de um certificado, vamos ver algumas opções de protocolos de criptografia:

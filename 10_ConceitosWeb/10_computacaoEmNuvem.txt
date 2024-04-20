@@ -6,6 +6,6 @@ A maior parte das nuvens são sustentadas por servidores Linux.
 A computação em nuvem tem a ideia de trabalhar com custo varivel de acordo com a demanda de processamento necessária (eu consigo fazer um upscale ou downscale da infraestrutura do site a depender da quantidade de acessos de forma virtual, sem a necessidade de comprar servidores fisicos).
 
 Há algumas classificações mais clássicas para nuvens:
-1- Nuvens de infraestrutura (IaaS - Infrastructure as a service): A principal desse tipo é a Amazon Web Service (consigo ter a gerencia do computador)
+1- Nuvens de infraestrutura (IaaS - Infrastructure as a service): A principal desse tipo é a AWS - Amazon Web Service (consigo ter a gerencia do computador)
 2- Platform as a service (PaaS) - aqui, a gente nao precisa se preocupar com a marquina de servidor, vamos nos preocupar apenas com o código. Exemplo: cloud.google.com
 3- Software as a Service (SaaS) - um exemplo aqui é a Sales Force, tenho um software que personalizo ele como eu quiser (VTEX é uma plataforma SaaS, porque tenho ja uma solução pronta, que personalizo como eu quiser)
