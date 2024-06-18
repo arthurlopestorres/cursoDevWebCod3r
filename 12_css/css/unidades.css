@@ -3,19 +3,18 @@
 /** px (pixels) */
 
 /*? Dimensão viewport  */
+/* Viewport é o tamanho da página, que varia de acordo com o espaço visível da página */
 /** vh, vw, vmin, vmax */
 
-/* Viewport é o tamanho da página, que varia de acordo com o espaço visível da página */
-/* 1vh = 1 / 100(% da altura do viewport) == 1% da altura do viewport */
-/* 1vw = 1 / 100(% da largura do viewport) == 1% da altura do viewport */
-/* vmin -> percentual em relação à menor dimensão do viewport */
-/* vmax -> percentual em relação à maior dimensão do viewport */
+/* 1vh = 1% do height do viewport */
+/* 1vw = 1% do width do viewport */
+/* vmin -> percentual em relação à menor dimensão do viewport (identifica automaticamente a menor dimensão do viewport)*/
+/* vmax -> percentual em relação à maior dimensão do viewport (identifica automaticamente a maior dimensão do viewport)*/
 
 /*? Dimensão de font */
 /** rem, em */
 
 /* rem -> baseada na raiz da aplicação, ou seja, vai fazer uma referencia ao tamanho baseando-se no parametro pai de todos na aplicação. 2rem = 2x o tamanho definido na raiz da aplicação */
-
 /* em -> baseada no tamanho da font definida no pai, assim se no elemento pai estiver definido tamnho de font 12px, 2em = 24px */
 
 /*? Dimensão percentual */
