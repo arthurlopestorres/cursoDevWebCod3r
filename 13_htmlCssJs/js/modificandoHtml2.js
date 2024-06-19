@@ -3,7 +3,7 @@ div.innerHTML = 'Texto alterado' //* quando fazemos isso, todo o innerHTML é su
 
 //div.outerHTML = 'Texto alterado' //* quando fazemos isso, todo o html é alterado, inclusive o do elemento selecionado.
 
-//?no insert adjacent html, podemos utilizar um elemento como parametro de posicionamento para o elemento que está sendo inserido utilizando os seguintes parametros no primerio termo
+//? insertAdjacentHtml: podemos utilizar um elemento como parametro de posicionamento para o elemento que está sendo inserido utilizando os seguintes parametros no primerio termo
 //*beforbegin, afterbegin, beforeend, afterend
 
 div.insertAdjacentHTML('beforebegin', '<p>antes inicio</p>') 

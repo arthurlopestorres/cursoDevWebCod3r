@@ -54,7 +54,7 @@ lista.parentNode.nextElementSibling.log()
 //* lastChild
 //* nextSibling
 //* previousSibling
-// Sem text no retorno:
+//! Sem text no retorno:
 //? children
 //? firstElementChild
 //? lastElementChild

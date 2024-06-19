@@ -3,7 +3,7 @@
 
 //! primeiro, vamos interceptar um evento de click, de forma que, quando houver um click sobre um elemento, algo acontecer.
 function navegarEm5s(e){
-    e.preventDefault()
+    e.preventDefault() //prevenimos aqui que o evento padrão que seria gerado pelo clique aconteça.
     console.log('saindo em 5s')
     setTimeout(() => {
         window.location.href = e.target.href //dentro do evento (e), temos uma propriedade chamada "target", que é o elemento HTML que disparou o evento. Estamos pegando o href do elemento 'a' que disparou o evento.
