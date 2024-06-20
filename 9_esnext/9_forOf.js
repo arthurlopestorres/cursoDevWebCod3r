@@ -18,7 +18,9 @@ const assuntosMap = new Map([
     ['Promise', {abordado: false}]
 ])
 for (let assunto of assuntosMap){
-    console.log(assunto)
+    console.log('assunto do map: ', assunto) //assunto do map:  [ 'Map', { abordado: true } ]
+                                             //assunto do map:  [ 'Set', { abordado: true } ]
+                                             //assunto do map:  [ 'Promise', { abordado: false } ]
 }
 
 for (let chave of assuntosMap.keys()){

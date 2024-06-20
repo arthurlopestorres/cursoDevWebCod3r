@@ -13,6 +13,7 @@ const http = require('http')
 
 const getTurma = letraDaTurma => {
     const url = `http://files.cod3r.com.br/curso-js/turma${letraDaTurma.toUpperCase()}.json`
+    
     return new Promise((resolve, reject) => {
         http.get(url, resposta => {
             let resultado = ''
@@ -38,7 +39,7 @@ const getTurma = letraDaTurma => {
 //         nomes = nomes.concat(alunos.map(aluno => `B: ${aluno.nome}`))
 //         getTurma('C').then(alunos => {
 //             nomes = nomes.concat(alunos.map(aluno => `C: ${aluno.nome}`))
-//             // console.log(nomes)
+//             console.log(nomes)
 //         })
 //     })
 // })

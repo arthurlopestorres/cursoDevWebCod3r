@@ -19,10 +19,10 @@ function geraNumeroAleatorio(min, max, numerosProibidos){
 async function gerarMegaSena(quantidadeDeNums){
     try{
         const numeros = []
-    for(let _ of Array(quantidadeDeNums).fill()){ //Array(numero).fill() faz com que um array seja preenchido com a quantidade passada para ele em 'numero'
+        for(let _ of Array(quantidadeDeNums).fill()){ //Array(numero).fill() faz com que um array seja preenchido com a quantidade passada para ele em 'numero'
         numeros.push(await geraNumeroAleatorio(1, 60, numeros))
-    }
-    return numeros
+        }
+        return numeros
     } catch(e){ //se eu nao criasse esse catch, o catch da execução pegaria o reject da funcao geraNumeroAleatorio
         throw('Que chato!!!')
     }
@@ -38,8 +38,7 @@ function generateMegaSenaNumbers(quantidadeDeNumeros = 6){
 
     function pushRandomNumber(){
         const rdmNumber = parseInt(Math.random() * (60 - 1 + 1)) + 1
-        if(megaSenaNumbers.includes(rdmNumber)){
-        }else{
+        if(!megaSenaNumbers.includes(rdmNumber)){
             megaSenaNumbers.push(rdmNumber)
         }
     }

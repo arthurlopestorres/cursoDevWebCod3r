@@ -2,7 +2,7 @@
 let a = 1
 console.log(a) //1
 
-//quando crio uma promise, entretando, estou prometendo para o codigo algo que irá se cumprir no futuro, exemplo:
+//? quando crio uma promise, entretando, estou prometendo para o codigo algo que irá se cumprir no futuro, exemplo:
 let p = new Promise((resolve, reject) => {
    try {
         resolve({
@@ -15,7 +15,7 @@ let p = new Promise((resolve, reject) => {
 })
 p.then(objeto => console.log(objeto)).catch(e => console.log(e)) //{ nome: 'Arthur', idade: 24 }
 
-//posso usar promessa sem a necessidade de atribui-la a uma variavel, por ser um objeto, exemplo:
+//? posso usar promessa sem a necessidade de atribui-la a uma variavel, por ser um objeto, exemplo:
 new Promise((resolve, reject) => {
     try{
         resolve('Arthur')

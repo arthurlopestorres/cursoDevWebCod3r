@@ -8,7 +8,7 @@ function real(partes, ...valores){
 }
 const preco = 29.99
 const precoParcela = 11
-console.log(real `1x de ${preco} ou 3x de ${precoParcela}`)
+console.log(real `1x de ${preco} ou 3x de ${precoParcela}`) // 1x de R$29.99 ou 3x de R$11.00
 
 //////////////////////////////////////////////////////////////
 
@@ -24,4 +24,4 @@ function real2(strings, ...valores){
 const preco1 = 100.99
 const preco2 = 200.45
 
-console.log(real2 `caneta custa ${preco1} e lapis custa ${preco2}`)
+console.log(real2 `caneta custa ${preco1} e lapis custa ${preco2}`) // caneta custa R$100,99 e lapis custa R$200,45

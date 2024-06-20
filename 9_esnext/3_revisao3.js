@@ -2,6 +2,7 @@
 const obj = { a: 1, b: 2, c: 3 }
 console.log(Object.values(obj)) //[1, 2, 3] -> retorna valores
 console.log(Object.entries(obj)) //[ [ 'a', 1 ], [ 'b', 2 ], [ 'c', 3 ] ] -> retorna arrays de conjuntos chave/valor.
+console.log(Object.keys(obj)) // [ 'a', 'b', 'c' ]
 
 //Melhorias na notação literal de objetos
 const nome = 'Carla'

@@ -13,7 +13,7 @@ function geraNumeroAleatorio(min, max, tempo){
 }
 
 //esta forma faz com que os numeros sejam gerados e depois exibidos, quando todos estiverem prontos
-//exemplo 1
+//* exemplo 1
 const geraValores = async () => {
     const arrayResultado = []
     for(let i = 0; i < 10; i++){
@@ -24,7 +24,7 @@ const geraValores = async () => {
 }
 geraValores()
 
-//exemplo 2
+//* exemplo 2
 function geraAleatorios(){
     return Promise.all([
         geraNumeroAleatorio(1, 20, 2000),
