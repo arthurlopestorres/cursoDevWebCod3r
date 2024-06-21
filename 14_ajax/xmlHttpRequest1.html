@@ -11,6 +11,80 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        // a primeira coisa que vamos fazer, então é uma função com uma requisição assíncrona:
+        function ajax(config){
+            const xhr = new XMLHttpRequest() //há grande compatibilidade com esse método, mas não é absoluto em browsers mais antigos
+            xhr.open(config.metodo, config.url, true) //abrindo aqui requisição, que espera um metodo e uma url no objeto de config, e que é uma requisição assincrona (true = assincrono)
+
+            xhr.onload = e => { //no onload, que é quando a gente recebe uma resposta da requisição, precisamos tratar a resposta de erro e a de sucesso.
+                if (xhr.status >= 200 && xhr.status < 300){ //vamos tratar respostas de sucesso ao carregar a requisição assincrona
+                    config.sucesso(xhr.response)
+                }else if(xhr.status >= 400){ //vamos tratar respostas de erro ao carregar a requisição assincrona
+                    config.erro({
+                        code: xhr.status,
+                        text: xhr.statusText
+                    })
+                }
+            }
+
+            xhr.send() //metodo para enviar requisição
+        }
+
+        function criarTabela(estados){ //criamos aqui a função para criar tabela a partir da mensagem de sucesso, parametrizada abaixo
+            const linhas = estados.map(estado => {
+                    //vamos criar células primeiro:
+                    const tdId = document.createElement('td')
+                    tdId.innerHTML = estado.id
+                    const tdNome = document.createElement('td')
+                    tdNome.innerHTML = estado.nome
+                    const tdSigla = document.createElement('td')
+                    tdSigla.innerHTML = estado.sigla
+
+                    const tr = document.createElement('tr')
+                    tr.appendChild(tdId)
+                    tr.appendChild(tdNome)
+                    tr.appendChild(tdSigla)
+
+                    return tr
+                })
+
+                const tabela = document.createElement('table') //vamos criar a tabela nesse passo
+                linhas.forEach(linha => { //vamos inserir as linhas na tabela
+                    tabela.insertAdjacentElement('beforeend', linha) //inserindo linhas na tabela
+                });
+                document.body.appendChild(tabela)
+        }
+
+        ajax({
+            metodo: 'get',
+            url: 'dados/estados.json',
+            sucesso: function(resposta){
+                const estados = JSON.parse(resposta)
+                criarTabela(estados)
+            },
+            erro: function(error){
+                const msg = document.createTextNode(`Erro ${error.code}: ${error.text}`) //para criar uma tag de texto
+                document.body.appendChild(msg) //para inserir a mensagem de erro no body e ser visivel
+            }
+        })
     </script>
 </body>
+
+<!-- ! aula 3 - XMLHttpRequest #1 -->
+<!-- vamos trabalhar, nessa aula, na tag script aqui no arquivo atual mesmo. (linha 13 em diante) -->
+<!-- o xmlhttpreuest é um método mais manual e menos utilizado de trabalhar com requisições. -->
+
+<!-- !trabalhando na tag script -->
+<!--* Criando a função ajax -->
+<!-- o objeto "config", da linha 15, é um objeto que contém as informações da requisição. Como URL, método de requisição em caso de sucesso, método de requisição em caso de erro. -->
+<!--? na requisição ajax montada entre as linhas 15 e 31, temos 4 informações esperadas para o objeto "config": metodo (linha 17), url (linha 17), método de sucesso (linha 21) e método de erro (linha 23)  -->
+
+<!--* trabalhando na chamada da função ajax -->
+<!-- fiz a chamada, inserindo o metodo, url e metodo de sucesso primeiramente -->
+
+<!--? tratando do método de sucesso -->
+    <!-- precisamos dar um "parse" ma resposta de sucesso e depois queremos renderizar uma tabela com os dados (a partir da linha 39) -->
+    <!-- primeiro, criamos as célucas da tabela (tds) e depois colocamos as celulas dentro da linha (tr) -->
+    <!-- depois, precisamos criar a tabela (linha 56) e então inserimos cada linha na tablea (linhas 57 a 59) -->
+<!--? tratando do método de erro -->
+<!-- apenas parametrizamos a mensagem de erro utilziar o code e o text que são recebidos no objeto xhr visto anteriormente. -->

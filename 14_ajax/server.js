@@ -14,9 +14,9 @@ appExpress.use(bodyParser.urlencoded({extended:true})) //esse será o bodyParser
 appExpress.use(bodyParser.json()) //esse será o bodyParser para tratar JSON
 
 //? Quando uma requisição to tipo get for feita para a URL "/teste", quero responder "ok":
-appExpress.get("/teste", (req, res) => {
-    res.send("ok")
-})
+// appExpress.get("/teste", (req, res) => {
+//     res.send("ok")
+// })
 
 //? vamos iniciar o servidor na porta 8080
 appExpress.listen(8080, () => {

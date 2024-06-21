@@ -25,3 +25,6 @@ Dentro do arquivo, alguns passos foram feitos;
     4- definimos quo express vai usar o body-parser para interpretação de formularios (linha 13) e de JSON (linha 14)
     5- estabelecemos a resposta "ok" para requisições do tipo "get" no caminho "/teste" (linha 17)
     6- inicializamos o servidor na porta 8080 (linhas 22 a 24)
+
+8- Vamos testar a requisição /teste, colocando no navegador o parametro localhost:8080/teste.
+comentei essa função no código, porque não vamos utiliza-la no dia a dia.
