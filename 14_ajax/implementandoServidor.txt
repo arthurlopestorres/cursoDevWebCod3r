@@ -1,0 +1,27 @@
+Vamos criar um servidor para que possamos prover arquivos estáticos e também para que possamos interagir com serviços especificos via backend.
+
+1- abrimos o terminal e acessamos a pasta AJAX
+
+2- criamos o arquivo package.json rodando o comando "npm init -y" (lembrando que o -y, nesse caso, faz com que o sistema preencha de forma automatica todos os campos do questionario de inicialização)
+
+3- no arquivo de package json, criamos um script "start" para rodar "nodemon script.js"
+
+4- criamos um parametro chamado "dependencies" no mesmo nível de "scripts" e inserimos as dependencias que serão utilizadas. Seguem as dependencias criadas:
+* "body-parser": "1.18.2" -> responsável por fazer o parser da requisição (leitrua dos dados do corpo da requisição e disponibilizá-los no backend)
+* "express": "4.16.3"
+* "multer": "1.3.0" -> utilizado para fazer o upload de arquivos e dados
+
+5- Criamos um novo parametro chamado "devDependencies" (dependicas de desenvolvimento) para instalarmos algumas dependencias que serão utilizadas somente em desenvolvimento e por isso não serão utilizadas na aplicação final. As dependencias instaladas foram:
+"nodemon": "1.17.3" -> monitora os arquivos para que, sempre que houver uma mudança, o servidor atualizar automaticamente a visualização sendo reiniciado.
+
+6- para instalar as dependencias mencionadas acima, rodamos o comando "npm i" no terminal.
+
+7- criamos um arquivo chamado "server.js", que vai ser o responsavel por prover dados estaticos e para fazer alguns serviços.
+[depois desse ponto, passamos a inserir configurações no arquivo server.js]
+Dentro do arquivo, alguns passos foram feitos;
+    1- importamos (via require) o body-parser e o express (linhas 1 e 3)
+    2- instaciamos o express numa variavel (linha 5)
+    3- colocamos o express para entregar qualquer arquivo da pasta atual (linha 10)
+    4- definimos quo express vai usar o body-parser para interpretação de formularios (linha 13) e de JSON (linha 14)
+    5- estabelecemos a resposta "ok" para requisições do tipo "get" no caminho "/teste" (linha 17)
+    6- inicializamos o servidor na porta 8080 (linhas 22 a 24)
