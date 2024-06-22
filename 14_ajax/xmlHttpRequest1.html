@@ -55,7 +55,7 @@
                 document.body.appendChild(tabela)
         }
 
-        ajax({
+        const configs = { 
             metodo: 'get',
             url: 'dados/estados.json',
             sucesso: function(resposta){
@@ -66,7 +66,10 @@
                 const msg = document.createTextNode(`Erro ${error.code}: ${error.text}`) //para criar uma tag de texto
                 document.body.appendChild(msg) //para inserir a mensagem de erro no body e ser visivel
             }
-        })
+        }
+
+        // executando a função ajax
+        ajax(configs)
     </script>
 </body>
 

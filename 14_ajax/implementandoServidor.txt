@@ -4,7 +4,7 @@ Vamos criar um servidor para que possamos prover arquivos estáticos e também p
 
 2- criamos o arquivo package.json rodando o comando "npm init -y" (lembrando que o -y, nesse caso, faz com que o sistema preencha de forma automatica todos os campos do questionario de inicialização)
 
-3- no arquivo de package json, criamos um script "start" para rodar "nodemon script.js"
+3- no arquivo de package json, criamos um script "start" para rodar "nodemon server.js"
 
 4- criamos um parametro chamado "dependencies" no mesmo nível de "scripts" e inserimos as dependencias que serão utilizadas. Seguem as dependencias criadas:
 * "body-parser": "1.18.2" -> responsável por fazer o parser da requisição (leitrua dos dados do corpo da requisição e disponibilizá-los no backend)
