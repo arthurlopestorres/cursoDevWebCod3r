@@ -11,6 +11,27 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        //vamos primeiro colocar a url (endpoint da api) numa variavel:
+        const url = 'dados/estados.json'
+
+        //agora, vamos acessar a resposta dessa requisição utilizando fetch (fetch é uma promise):
+        fetch(url)
+            .then(resp => resp.json()) //a função .json() traz a resposta pronta da URL, e aí podemos trabalhar com o conteúdo.
+            .then(resp => {
+                const lista = document.createElement('ul')
+                const estados = resp.map(estado => estado.nome).forEach(estado => {
+                    const item = document.createElement('li')
+                    item.innerHTML = estado
+                    lista.appendChild(item)
+                });
+                document.body.appendChild(lista)
+            })
+            .catch(e => {
+                const errorText = document.createTextNode(e)
+                document.body.appendChild(errorText)
+            })
     </script>
 </body>
+<!--! Fetch: forma mais moderna de lidar com API -->
+<!--* Não é necessário importar bibliotecas -->
+<!--? Nessa aula, utilizando FetchAPI, vamos fazer uma quesição do tipo GET -->

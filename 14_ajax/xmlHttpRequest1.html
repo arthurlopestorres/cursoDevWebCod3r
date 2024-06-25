@@ -30,7 +30,8 @@
             xhr.send() //metodo para enviar requisição
         }
 
-        function criarTabela(estados){ //criamos aqui a função para criar tabela a partir da mensagem de sucesso, parametrizada abaixo
+        //criamos aqui a função para criar tabela a partir da mensagem de sucesso, parametrizada abaixo
+        function criarTabela(estados){ 
             const linhas = estados.map(estado => {
                     //vamos criar células primeiro:
                     const tdId = document.createElement('td')
@@ -67,9 +68,8 @@
                 document.body.appendChild(msg) //para inserir a mensagem de erro no body e ser visivel
             }
         }
-
-        // executando a função ajax
-        ajax(configs)
+        
+        ajax(configs) // executando a função ajax
     </script>
 </body>
 

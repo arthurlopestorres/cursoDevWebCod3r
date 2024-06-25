@@ -11,6 +11,45 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+
+        function ajax(config){
+            const xhr = new XMLHttpRequest()
+            xhr.open(config.method, config.url, true)
+            //ao inves de usar o "onload", que foi utilizado antes, vamos utilizar o "onreadystatechange"
+            xhr.onreadystatechange = e => {
+                if(xhr.readyState === 4){ //conforme documentação que pode ser acessada no site w3schools, o 4 nesse caso indica que a requisição foi finalizada.
+                    if(xhr.status === 200) {
+                        config.sucesso(xhr.responseXML) //como estamos tratando com arquivo xml, o response precisa ser responseXML ao inves de apenas "response", que é o formato utilizado com JSON
+                    }else if(xhr.status >= 400){
+                        config.erro({
+                            code: xhr.status,
+                            text: xhr.statusText
+                        })
+                    }
+                }
+            }
+            xhr.send()
+        }
+
+        ajax({
+            url: "dados/estados2.xml",
+            method: "GET",
+            sucesso: function(response){
+                const estados = response.getElementsByTagName('estado') //trando de XML, vamos tratar do arquivo como um arquivo HTML (encontrando dados a partir da DOM)
+                const itens = Array.from(estados).reduce((html, estado) =>  //cada estado, nesse caso, será uma tag, na prática e o HTML é o acumulador.
+                    html + `<li>${estado.attributes.nome.value}</li>`, '' //a vírgula e abertura e fechamento de aspas, nesse caso, trata-se do valor inicial de "html", para que nenhum erro ocorra.
+                )
+                const lista = document.createElement('ul')
+                lista.innerHTML = itens
+                document.body.insertAdjacentElement('beforeend', lista)
+            },
+            erro: function(error){
+                const message = document.createTextNode(`${error.code}: ${error.text}`)
+                document.body.appendChild(message)
+            }
+        })
+
     </script>
 </body>
+
+<!--! Nesse exercicio, o objetivo será consumirmos o arquivo "estados.xml", que se encontra na pasta "dados"-->

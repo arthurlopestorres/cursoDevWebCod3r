@@ -22,6 +22,45 @@
     <div class="progresso"></div>
 
     <script>
-        
+        function ajaxUpload(config){
+            const xhr = new XMLHttpRequest() //há grande compatibilidade com esse método, mas não é absoluto em browsers mais antigos
+
+            if(xhr.upload){
+                xhr.upload.onprogress = e => { //estamos configurando aqui o acompanhamento de progresso da requisição
+                    const atual = e.loaded
+                    const total = e.total
+                    const percentual = (atual / total) * 100
+                    config.progresso({atual, total, percentual})
+                }
+            }
+
+            xhr.open(config.method, config.url, true)
+
+            xhr.send(config.formData) //estou utilizando formData aqui por conta da resição ser um post (diferente do exemplo anterior, que estavamos utilizando get)
+        }
+
+        // A próxima etapa, nesse caso, é definir quando a função vai ser executada. Queremos que, assim que o arquivo for selecionado, que o upload seja iniciado, por isso precisamos acompnhar o evento "onchange"
+        document.querySelector('input[type=file]').onchange = e => {
+            const formData = new FormData() //criando um novo objeto formData
+            formData.append(e.target.name, e.target.files[0]) //adicionando o arquivo no formData (e.target , nesse caso, é o input do tipo "file")
+
+            ajaxUpload({ //aqui, precisamos ter algumas coisas que estão esperadas pela declaração da função: o método progresso (linha 33), a URL (linha 37) e o formData (linha 39)
+                method: 'post',
+                url: 'upload',
+                formData,
+                progresso({dados}){
+                    const progresso = document.querySelector('.progresso')
+                    progresso.innerHTML = JSON.stringify(dados) //dados sendo inseridos no layout (sem barra de progresso, apenas os dados)
+                }
+           })
+        }
     </script>
 </body>
+
+<!--! Nesse exercicio, vamos falar sobre upload utilizar o xmlhttprequest -->
+
+<!--* Primeiramente, a gente importou no arquivo servidor.js o multer, que será utilizado para interpretar o fomulario de upload. (linha 21 do arquivo mencionado) -->
+<!--* Em segundo lugar, fizemos uma configuração de storage que serve para personalizar a pasta e o nome do arquivo a ser salvo no disco. (linha 23 em diante) - essa configuração serve para evitarmos arquivos sobrepostos ou duplicados por exemplo -->
+<!--* As configurações foram feitas entre as linhas 21 e 41 do arquivo server.js que têm como objetivo tratar o upload de arquivos, (na formatação da pasta, mome do arquivo, método de envio e endpoint) -->
+
+<!--? Depois da etapa acima, passamos às anotações neste arquivo, dentro da tag script, acima. -->

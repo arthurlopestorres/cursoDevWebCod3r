@@ -18,6 +18,36 @@ appExpress.use(bodyParser.json()) //esse será o bodyParser para tratar JSON
 //     res.send("ok")
 // })
 
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+     destination: function (req, file, callback) {
+        callback(null, './upload') // aqui, a gente indica para o sistema a pasta onde a gente quer que o arquivo seja salvo
+     },
+     filename: function (req, file, callback) {
+        callback(null, `${Date.now()}_${file.originalname}`) //aqui, a gente indica o nome do arquivo que a gente quer que o sistema salve por padrão.
+     }
+})
+
+const upload = multer({storage}).single('arquivo') //aqui, estamos definindo que o upload será feito utilizando os parametros do objeto "storage" e o nome do arquivo na requisição.
+
+appExpress.post('/upload', (req, res) => {
+    upload(req, res, err => {
+        if (err) {
+            return res.end('ocorreu um erro.')
+        }
+        res.end('Upload concluído com sucesso!')
+    })
+})
+
+//!Aula Fetch 2
+appExpress.post('/formulario', (req, res) => { //como estou recebendo informações (método post, o body-parser é necessário para que seja feita a interpretação correta dos dados recebidos)
+    res.send({
+        ...req.body, //tudo que eu receber de resposta eu retorno criando esse novo objeto (bem simples)
+        id: 1
+    })
+})
+
 //? vamos iniciar o servidor na porta 8080
 appExpress.listen(8080, () => {
     console.log("Servidor iniciado na porta 8080")

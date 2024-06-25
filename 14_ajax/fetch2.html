@@ -22,13 +22,45 @@
 
 <body class="conteudo exercicio">
     <h1>Formulário Via Fetch</h1>
-    <form name="usuarioForm" action="formulario" method="post">
+    <form name="usuarioForm" action="/formulario" method="post">
         <input type="text" name="nome" placeholder="Nome..." />
         <input type="text" name="sobrenome" placeholder="Sobrenome..." />
         <button>Salvar</button>
     </form>
     <div id="resultado"></div>
     <script>
-        // ...
+        //vou acessar o formulario a partir do nome utilizando o objeto "Document", e vou colocar um evento de escuta para subimt. Vou associar esse evento a uma função assíncrona para enviar os dados para o server.js
+        document.usuarioForm.onsubmit = async e => {
+            e.preventDefault() //fazemos isso, para que possamos controlar o envio via fetch e nao deixar o form já fazer o submit automaticamente.
+
+            const form = e.target
+            const data = new FormData(form) //estou colocando todos os dados do formulario nesse novo objeto
+            data.append('ajax', true) //adicionando um dado a mais no formulario (só de exemplo, nao serve para nada)
+
+            const options = {
+                method: form.method,
+                body: new URLSearchParams(data), //se ue nao enviar dessa forma, os dados não serão enviados para o backend de forma correta.
+            }
+
+            const resultado = document.getElementById('resultado')
+            // fetch(form.action, options)
+            //     .then(resp => resp.json())
+            //     .then(json => {
+            //         resultado.innerHTML = JSON.stringify(json)
+            //     })
+
+            //fazendo o processo via await:
+            try{
+                const resp = await fetch(form.action, options)
+                const json = await resp.json()
+                resultado.innerHTML = JSON.stringify(json)
+            } catch (e){
+                resultado.innerHTML = e
+            }
+        }
     </script>
 </body>
+<!--! Nessa aula, vamos fazer uma requisição do tipo POST utilizando FetchAPI -->
+<!--* Atenção: o método já está declarado no HTML, como atributo da tag "form" -->
+
+<!-- Para ser possível fazermos o envio dos dados, vamos criar uma função no servidor, que vai ser resposável por tratar o método post sendo utilizado aqui. -->
