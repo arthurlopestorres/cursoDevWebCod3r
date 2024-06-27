@@ -12,6 +12,17 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        
+        const url = 'dados/estados.json'
+
+        axios(url).then(resp => {
+            //diferente do fetch, com axios, a gente ja possui o objeto correto em resp.data, nao sendo necessario o step de resp.json()
+            const itens = resp.data.reduce((html, estado) => html + `<li>${estado.nome}</li>`, '')
+            document.body.insertAdjacentHTML("beforeend", `<ul>${itens}</ul>`)
+        })
+
     </script>
 </body>
+<!--! Axios também é um cliente http, mas é biblioteca de terceiros -->
+<!-- Também é baseado em promise e é muito utilizado por aqueles que trabalham com React. -->
+ <!-- Se eu importar o axios para a aplicação, ele pode ter mais compatibilidade do que o fetch -->

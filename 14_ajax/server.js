@@ -48,6 +48,27 @@ appExpress.post('/formulario', (req, res) => { //como estou recebendo informaç�
     })
 })
 
+//!Aula Axios 2
+appExpress.get('/parOuImpar', (req, res) => {
+    // há algumas formas de receber dados a partir do front end no express:
+    // 1. req.body -> utilizando na aula Fetch 2
+    // 2. req.query -> é colocado dentro da consulta a query, exemplo: /caminho?query -> ficaria assim: /caminho?numero=1
+    // 3. req.params -> cada param estaria representado com o incio /: na requisição, exemplo: /caminho/:param1/:param2, que na pratica ficaria assim: /caminho/1/2
+    const par = parseInt(req.query.numero) % 2 == 0
+    res.send({
+        resultado: par ? 'par' : 'impar'
+    })
+})
+
+appExpress.post('/axiosPost', (req, res) => {
+    const nome = req.body.nome
+    const sobrenome = req.body.sobrenome
+    res.send({
+        nome,
+        sobrenome
+    })
+})
+
 //? vamos iniciar o servidor na porta 8080
 appExpress.listen(8080, () => {
     console.log("Servidor iniciado na porta 8080")

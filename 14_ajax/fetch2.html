@@ -34,8 +34,7 @@
             e.preventDefault() //fazemos isso, para que possamos controlar o envio via fetch e nao deixar o form já fazer o submit automaticamente.
 
             const form = e.target
-            const data = new FormData(form) //estou colocando todos os dados do formulario nesse novo objeto
-            data.append('ajax', true) //adicionando um dado a mais no formulario (só de exemplo, nao serve para nada)
+            const data = new FormData(form) //estou colocando todos os dados do formulario nesse novo objeto. Eu poderia colocar novas infos nesse formulario depois
 
             const options = {
                 method: form.method,

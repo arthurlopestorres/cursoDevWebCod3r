@@ -14,6 +14,29 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibirResultado(id, dados){
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto
+        }
+
+        //uma forma simples de fazer a requisição seria direto na query da url:
+        //axios('/parOuImpar?numero=6').then(resp => exibirResultado('get', resp.data))
+
+        //Outra forma, seria enviando o parametro num objeto de "options":
+        axios.get('/parOuImpar', { //esse objeto será interpretado como "query" (por ser um get)
+                params: {
+                    numero: 5
+                }
+            }).then(resp => exibirResultado('get', resp.data))
+
+        //agora, vamos fazer um post
+        axios.post('/axiosPost', { //esse objeto será interpretado como body (por ser um post)
+            nome: 'Arthur',
+            sobrenome: 'Lopes Torres'
+        }).then(resp => exibirResultado('post', resp.data))
     </script>
 </body>
+<!--! Nessa aula, vamos fazer duas requisições para o servidor (get e post) 
+* A requisição get testará se o número é par ou impar -> claro que isso nao seria feito via servidor num cenário real, mas é para fins de teste
+* Vamos fazer chamada via post usando axios.
+-->
