@@ -25,6 +25,37 @@
     </nav>
     <div class="pagina"></div>
     <script>
-        // ...
+        function navegarViaAjax(url, seletor, push = true){
+            if(!url || !seletor) return
+            const elemento = document.querySelector(seletor);
+
+            fetch(url)
+                .then(resp => resp.text()) //nesse caso, vou utilizar a função .text para para pegar o HTML do retorno ao inves de pegar o retorno em json (.json, que normalmente é utilizado)
+                .then(html => {
+                    elemento.innerHTML = html
+                    if(push){
+                        history.pushState({seletor}, null, url) //estou colocando 3 elementos no historico do browser: o proprio seletor, o null seria o lugar de ser salvo o titulo da pagina, e a url da pagina.
+                    }
+                })
+
+                window.onpopstate = function(e){ //esse parametro de window faz com que a gente remova um dado de estado da navegação. O pushState usado acima inseriu, mas nao queremos manter o mesmo historico ao clicar em "voltar" no navegador, por isso precisamos desse tratamento.
+                    if(e.state){ //se o historico tiver algo
+                        navegarViaAjax(window.location.href, e.state.seletor, false) //(url adicionada no historico, selecionando o "seletor, que foi adicionado antes", falso para nao dar push adicionando mais um estado no historico)
+                    }
+                }
+        }
+
+        //agora, vamos selecionar os botões
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value
+            const seletorDestino = link.attributes['wm-destino'].value
+
+            link.addEventListener('click', e => {
+                e.preventDefault()
+                navegarViaAjax(url, seletorDestino)
+            })
+        })
     </script>
 </body>
+<!--! Definição de SPA: SPA significa Single Page Application. É um tipo de aplicativo web que carrega uma única página no navegador e dinamicamente atualiza essa página conforme o usuário interage com o aplicativo, em vez de carregar novas páginas do servidor. Isso resulta em uma experiência de usuário mais fluida e rápida. -->
+<!--* Nesse exemplo, não estamos desenvolvendo uma SPA necessariamente, por não tratar-se de uma aplicação e sim de uma navegação em única página. -->
